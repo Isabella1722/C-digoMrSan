@@ -2,7 +2,7 @@ let pantalla;
 let inicio;
 function settings (){
 createCanvas (375,812);
-    
+    //Pero mira ese commit :v
 }
 function setup (){
 inicio=loadImage("Inicio.jpg");
