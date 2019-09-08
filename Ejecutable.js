@@ -2,35 +2,29 @@
 let pantalla;
 let inicio, acompa, acompaNumero, adiciones, alerta1, alerta2, cerrarSesion, confirmarDir, efectivo, pago, factura,
     historialPedido, menu, menuH, papitas, registro, sCriollo, sVegetariano, sQubano, sItaliano, tarjeta;
-<<<<<<< HEAD
-let xd;
-let cas;
-let cap;
-=======
->>>>>>> 795dc7790c6b40acdc7eaa8ac6a296ffc3652fe9
 
 function preload() {
-    inicio = loadImage("data/inicio.jpg")
-    acompa = loadImage("data/Acompa.jpg")
-    acompaNumero = loadImage("data/AcompaNumero.jpg")
-    adiciones = loadImage("data/Adiciones.jpg")
-    alerta1 = loadImage("data/Alerta1.jpg")
-    alerta2 = loadImage("data/Alerta2.jpg")
-    cerrarSesion = loadImage("data/CerrarSesion.jpg")
-    confirmarDir = loadImage("data/ConfirmarDir.jpg")
-    efectivo = loadImage("data/Efectivo.jpg")
-    pago = loadImage("data/Pago.jpg")
-    factura = loadImage("data/Factura.jpg")
-    historialPedido = loadImage("data/HistorialPedido.jpg")
-    menu = loadImage("data/Menu.jpg")
-    menuH = loadImage("data/MenuHamburguesa.jpg")
-    papitas = loadImage("data/Papitas.jpg")
-    registro = loadImage("data/Registro.jpg")
-    sCriollo = loadImage("data/SCriollo.jpg")
-    sVegetariano = loadImage("data/SVegetariano.jpg")
-    sQubano = loadImage("data/SQubano.jpg")
-    sItaliano = loadImage("data/SItaliano.jpg")
-    tarjeta = loadImage("data/Tarjeta.jpg")
+    inicio = loadImage("data/inicio.jpg");
+    acompa = loadImage("data/Acompa.jpg");
+    acompaNumero = loadImage("data/AcompaNumero.jpg");
+    adiciones = loadImage("data/Adiciones.jpg");
+    alerta1 = loadImage("data/Alerta1.jpg");
+    alerta2 = loadImage("data/Alerta2.jpg");
+    cerrarSesion = loadImage("data/CerrarSesion.jpg");
+    confirmarDir = loadImage("data/ConfirmarDir.jpg");
+    efectivo = loadImage("data/Efectivo.jpg");
+    pago = loadImage("data/Pago.jpg");
+    factura = loadImage("data/Factura.jpg");
+    historialPedido = loadImage("data/HistorialPedido.jpg");
+    menu = loadImage("data/Menu.jpg");
+    menuH = loadImage("data/MenuHamburguesa.jpg");
+    papitas = loadImage("data/Papitas.jpg");
+    registro = loadImage("data/Registro.jpg");
+    sCriollo = loadImage("data/SCriollo.jpg");
+    sVegetariano = loadImage("data/SVegetariano.jpg");
+    sQubano = loadImage("data/SQubano.jpg");
+    sItaliano = loadImage("data/SItaliano.jpg");
+    tarjeta = loadImage("data/Tarjeta.jpg");
 
 }
 
@@ -58,12 +52,8 @@ function draw() {
         case 1:
 
             //PANTALLA REGISTRO
-<<<<<<< HEAD
-            menu = loadImage("data/Menu.jpg")
-=======
             image(menu, 0, 0);
->>>>>>> 795dc7790c6b40acdc7eaa8ac6a296ffc3652fe9
-
+            
             break;
 
 
@@ -123,14 +113,9 @@ function mousePressed() {
     print(mouseX + " " + mouseY + " \n");
     //BOTÓN INSTRUCCIONES
     if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589) {
-<<<<<<< HEAD
         cursor(HAND);
         pantalla = 1;
 
-=======
-
-        pantalla = 1;
->>>>>>> 795dc7790c6b40acdc7eaa8ac6a296ffc3652fe9
 
     }
 
