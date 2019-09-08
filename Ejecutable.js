@@ -137,6 +137,13 @@ function mousePressed() {
 
 
     }
+  // BOTÓN REGISTRO VOLVER MENU
+    if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 2) {
+        cursor(HAND);
+        pantalla = 1 ;
+
+
+    }
 
 }
 
