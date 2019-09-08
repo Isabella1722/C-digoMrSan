@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let pantalla;
 let inicio;
 function settings (){
@@ -21,3 +22,8 @@ function mousePressed (){
 
 
 
+=======
+//Prueba de commit
+
+//Prueba de commit III
+>>>>>>> 763a91ecf0e3e8209ebddbb1e6aa380c7c709116
