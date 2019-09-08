@@ -1,7 +1,7 @@
 
 let pantalla;
-let inicio, acompa,acompaNumero,adiciones,alerta1,alerta2,cerrarSesion,confirmarDir,efectivo,pago,factura,
-historialPedido,menu,menuH,papitas,registro,sCriollo,sVegetariano,sQubano,sItaliano,tarjeta;
+let inicio, acompa, acompaNumero, adiciones, alerta1, alerta2, cerrarSesion, confirmarDir, efectivo, pago, factura,
+    historialPedido, menu, menuH, papitas, registro, sCriollo, sVegetariano, sQubano, sItaliano, tarjeta;
 let xd;
 let cas;
 let cap;
@@ -27,86 +27,85 @@ function preload() {
     sVegetariano = loadImage("data/SVegetariano.jpg")
     sQubano = loadImage("data/SQubano.jpg")
     sItaliano = loadImage("data/SItaliano.jpg")
-    tarjeta=loadImage("data/Tarjeta.jpg")
+    tarjeta = loadImage("data/Tarjeta.jpg")
 
 }
 
 function setup() {
     createCanvas(375, 812);
-    pantalla=0;
+    pantalla = 0;
 
 
 }
 function draw() {
     background(0);
-    
-    switch (pantalla){
- 
+
+    switch (pantalla) {
+
 
         case 0:
             //PANTALLA INICIO
-                image(inicio, 0, 0);
+            image(inicio, 0, 0);
 
 
-<<<<<<< HEAD
 
-        break;
+            break;
 
 
         case 1:
 
-           //PANTALLA REGISTRO
-           menu = loadImage("data/Menu.jpg")
+            //PANTALLA REGISTRO
+            menu = loadImage("data/Menu.jpg")
 
-        break;
+            break;
 
 
         case 2:
-            
-           //PANTALLA MENU
 
-        break;
+            //PANTALLA MENU
+
+            break;
 
         case 3:
-            
-           //PANTALLA MENU HAMBURGUES
 
-        break;
+            //PANTALLA MENU HAMBURGUES
+
+            break;
 
         case 4:
 
-           //PANTALLA SANDWICH
+            //PANTALLA SANDWICH
 
-        break;
+            break;
 
 
         case 5:
 
-           //PANTALLA ALERTA ADICIONES
-        break;
+            //PANTALLA ALERTA ADICIONES
+            break;
 
         case 6:
 
-           //PANTALLA ALERTA ACOMPAÑAMIENTOS
-        break;
+            //PANTALLA ALERTA ACOMPAÑAMIENTOS
+            break;
 
         case 7:
 
-           //PANTALLA PAGO
-        break;
+            //PANTALLA PAGO
+            break;
         case 8:
 
             //PANTALLA FACTURA
-             break;
-         case 9:
+            break;
+        case 9:
 
             //PANTALLA CERRAR SESION
-          break;
+            break;
 
         case 10:
 
-        //PANTALLA HISTORIAL PEDIDO
-          break;
+            //PANTALLA HISTORIAL PEDIDO
+            break;
 
 
     }
@@ -117,13 +116,12 @@ function mousePressed() {
     print(mouseX + " " + mouseY + " \n");
     //BOTÓN INSTRUCCIONES
     if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589) {
- 
-      pantalla = 1;
- 
+        cursor(HAND);
+        pantalla = 1;
+
+
     }
 
-=======
->>>>>>> 265e75417ecd7b9fc948726ea573a9ebf4c2a106
 }
 
 // alt shift f  para acomodar las lineas de código
