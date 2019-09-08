@@ -36,14 +36,19 @@ function setup() {
 }
 function draw() {
     background(0);
-
+    cursor(ARROW);
     switch (pantalla) {
-
+       
 
         case 0:
             //PANTALLA INICIO
             image(inicio, 0, 0);
-
+            if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589) {
+                cursor(HAND);
+               
+        
+        
+            }
 
 
             break;
@@ -51,7 +56,7 @@ function draw() {
 
         case 1:
 
-            //PANTALLA REGISTRO
+            //PANTALLA Menu
             image(menu, 0, 0);
             
             break;
@@ -59,14 +64,14 @@ function draw() {
 
         case 2:
 
-            //PANTALLA MENU
-
+            //PANTALLA Registro
+            image(registro, 0, 0);
             break;
 
         case 3:
 
             //PANTALLA MENU HAMBURGUES
-
+            image(menuH, 0, 0);
             break;
 
         case 4:
@@ -111,10 +116,24 @@ function draw() {
 
 function mousePressed() {
     print(mouseX + " " + mouseY + " \n");
-    //BOTÓN INSTRUCCIONES
-    if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589) {
+    //BOTÓN ENTRAR 
+    if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0) {
         cursor(HAND);
         pantalla = 1;
+
+
+    }
+    //BOTÓN MENÚ HAMBURGUESA
+   if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 1) {
+        cursor(HAND);
+        pantalla = 3;
+
+
+    }
+  // BOTÓN REGISTRO
+    if (mouseX >= 124 && mouseX <= 246 && mouseY >= 623 && mouseY <= 646 && pantalla == 0 ) {
+        cursor(HAND);
+        pantalla = 2;
 
 
     }
