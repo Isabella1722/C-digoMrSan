@@ -2,9 +2,12 @@
 let pantalla;
 let inicio, acompa, acompaNumero, adiciones, alerta1, alerta2, cerrarSesion, confirmarDir, efectivo, pago, factura,
     historialPedido, menu, menuH, papitas, registro, sCriollo, sVegetariano, sQubano, sItaliano, tarjeta;
+<<<<<<< HEAD
 let xd;
 let cas;
 let cap;
+=======
+>>>>>>> 795dc7790c6b40acdc7eaa8ac6a296ffc3652fe9
 
 function preload() {
     inicio = loadImage("data/inicio.jpg")
@@ -55,7 +58,11 @@ function draw() {
         case 1:
 
             //PANTALLA REGISTRO
+<<<<<<< HEAD
             menu = loadImage("data/Menu.jpg")
+=======
+            image(menu, 0, 0);
+>>>>>>> 795dc7790c6b40acdc7eaa8ac6a296ffc3652fe9
 
             break;
 
@@ -116,9 +123,14 @@ function mousePressed() {
     print(mouseX + " " + mouseY + " \n");
     //BOTÓN INSTRUCCIONES
     if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589) {
+<<<<<<< HEAD
         cursor(HAND);
         pantalla = 1;
 
+=======
+
+        pantalla = 1;
+>>>>>>> 795dc7790c6b40acdc7eaa8ac6a296ffc3652fe9
 
     }
 
