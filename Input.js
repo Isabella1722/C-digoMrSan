@@ -6,6 +6,6 @@ class Input{
     }
 
     pintar(){
-        
+        createInput();
     }
 }
