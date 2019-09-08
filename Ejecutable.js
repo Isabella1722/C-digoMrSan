@@ -11,6 +11,7 @@ function preload() {
 
 function setup() {
     createCanvas(375, 812);
+    pantalla=0;
 
 
 }
@@ -19,7 +20,7 @@ function draw() {
     image(inicio, 0, 0);
     switch (pantalla){
 
-        
+
     }
 
 }
