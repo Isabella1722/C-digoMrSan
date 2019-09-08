@@ -48,6 +48,7 @@ function draw() {
                 image(inicio, 0, 0);
 
 
+<<<<<<< HEAD
 
         break;
 
@@ -121,6 +122,8 @@ function mousePressed() {
  
     }
 
+=======
+>>>>>>> 265e75417ecd7b9fc948726ea573a9ebf4c2a106
 }
 
 // alt shift f  para acomodar las lineas de código
