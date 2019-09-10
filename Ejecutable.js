@@ -299,6 +299,27 @@ function draw() {
             break;
 
 
+            case 11:
+
+                //PANTALLA ALERTA ADICIONES
+                
+                image(alerta1, 0, 0);
+    
+                break;   
+
+
+                case 12:
+
+                    //PANTALLA  ALERTA ACOMPAÑAMIENTOS
+                    image(alerta2, 0, 0);
+        
+        
+                    break;  
+
+
+
+
+
     }
 
 }
@@ -437,7 +458,7 @@ function mousePressed() {
 
     //INCREMENTAR CANTIDAD DE SANDWICH CRIOLLO
     if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 4) {
-        console.log(plato1.cantidad);
+      //  console.log(plato1.cantidad);
         plato1.cantidad ++;
 
     }
@@ -453,7 +474,7 @@ function mousePressed() {
     }
     //INCREMENTAR CANTIDAD DE SANDWICH CUBANO
     if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 5) {
-        console.log(plato1.cantidad);
+     //   console.log(plato1.cantidad);
         plato2.cantidad ++;
 
     }
@@ -470,7 +491,7 @@ function mousePressed() {
 
     //INCREMENTAR CANTIDAD DE SANDWICH ITALIANO
     if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 6) {
-        console.log(plato1.cantidad);
+      //  console.log(plato1.cantidad);
         plato3.cantidad ++;
 
     }
@@ -486,7 +507,7 @@ function mousePressed() {
     }
     //INCREMENTAR CANTIDAD DE SANDWICH VEGETARIANO
     if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 7) {
-        console.log(plato1.cantidad);
+      //  console.log(plato1.cantidad);
         plato4.cantidad ++;
 
     }
