@@ -6,6 +6,7 @@ let inicio, acompa, acompaNumero, adiciones, alerta1, alerta2, cerrarSesion, con
     let sandwichCriollo,sandwichCubano,sandwichItaliano,sandwichVegetariano;
 let cantidad;
 let plato1, plato2, plato3, plato4;
+let arrayUsuario;
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -48,6 +49,7 @@ function setup() {
     plato3 = new Plato (3,"Sandwich Italiano","Roast beff,jamón,salami,queso parmesano,pasta,tomate",13400,0);
     plato4 = new Plato (4,"Sandwich Vegetariano","Pimentón,champiñones,tomate,maíz tierno y zanahoria",11300,0);
        
+    arrayUsuario = [];
 
     }
     //platosArreglo = [];

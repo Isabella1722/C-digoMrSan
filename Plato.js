@@ -6,7 +6,7 @@ class Plato {
         //this.idAdiciones = idAdiciones;
        // this.idComplementos = idComplementos;
         this.precio = precio;
-        this.cantidad =0;
+        this.cantidad = cantidad;
        // this.evaluarAdicion = evaluarAdicion;
        // this.evaluarComplemento = evaluarComplemento;
 /*
