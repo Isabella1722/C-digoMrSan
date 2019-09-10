@@ -1,4 +1,3 @@
-
 let pantalla;
 let inicio, acompa, acompaNumero, adiciones, alerta1, alerta2, perfil, confirmarDir, efectivo, pago, factura,
     historialPedido, menu, menuP, papitas, registro, sCriollo, sVegetariano, sQubano, sItaliano, tarjeta;
@@ -7,7 +6,6 @@ let sandwichCriollo, sandwichCubano, sandwichItaliano, sandwichVegetariano;
 let cantidad;
 let plato1, plato2, plato3, plato4;
 let arrayUsuario;
-//:v
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -174,10 +172,7 @@ function draw() {
     
             }
 */
-
-
             break;
-
 
         case 2:
 
@@ -202,10 +197,6 @@ function draw() {
 
             textSize(15);
             text("Contraseña", 60, 456);
-
-
-
-
             break;
 
         case 3:
@@ -221,7 +212,6 @@ function draw() {
             if (mouseX >= 0 && mouseX <= 264 && mouseY >= 14 && mouseY <= 90) {
                 cursor(HAND);
             }
-
             break;
 
         case 4:
@@ -232,7 +222,6 @@ function draw() {
                 cursor(HAND);
             }
 
-
             fill(0);
             textSize(16);
             textAlign(CENTER);
@@ -242,7 +231,6 @@ function draw() {
             textSize(13);
             text(plato1.ingredientes, 190, 371);
 
-
             fill(255);
             textSize(22);
             text(plato1.cantidad, 188, 510);
@@ -251,11 +239,7 @@ function draw() {
             if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692) {
                 cursor(HAND);
             }
-
-
-
             break;
-
 
         case 5:
 
@@ -265,7 +249,6 @@ function draw() {
                 cursor(HAND);
             }
 
-
             fill(0);
             textSize(16);
             textAlign(CENTER);
@@ -274,8 +257,6 @@ function draw() {
             fill(0);
             textSize(13);
             text(plato2.ingredientes, 190, 371);
-
-
 
             fill(255);
             textSize(22);
@@ -321,7 +302,6 @@ function draw() {
 
             }
 
-
             fill(0);
             textSize(16);
             textAlign(CENTER);
@@ -338,10 +318,12 @@ function draw() {
                 cursor(HAND);
             }
             break;
+
         case 8:
 
             //PANTALLA FACTURA
             break;
+
         case 9:
 
             //PANTALLA CERRAR SESION
@@ -362,10 +344,7 @@ function draw() {
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
             }
-
-
             break;
-
 
         case 11:
 
@@ -380,7 +359,6 @@ function draw() {
             }
             break;
 
-
         case 12:
 
             //PANTALLA  ALERTA ACOMPAÑAMIENTOS
@@ -391,8 +369,6 @@ function draw() {
             if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472) {
                 cursor(HAND);
             }
-
-
             break;
 
         case 13:
@@ -402,31 +378,22 @@ function draw() {
             if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
                 cursor(HAND);
             }
-
-
-
             break;
+
         case 14:
 
             //PANTALLA   ACOMPAÑAMIENTOS
             image(acompa, 0, 0);
-
-
             break;
-        case 14:
+
+        case 15:
 
             //PANTALLA   PAGO
             image(pago, 0, 0);
-
-
+            if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
+                cursor(HAND);
+            }
             break;
-
-
-
-
-
-
-
 
     }
 
@@ -440,16 +407,19 @@ function mousePressed() {
     if (mouseX >= 0 && mouseX <= 264 && mouseY >= 14 && mouseY <= 90 && pantalla == 3) {
         pantalla = 9;
     }
+
     //BOTÓN SANDWICH ITALIANO
     if (mouseX >= 34 && mouseX <= 343 && mouseY >= 570 && mouseY <= 652 && pantalla == 1) {
         pantalla = 6;
     }
+
     //BOTÓN ENTRAR
     if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0) {
         pantalla = 1;
         userInput.remove();
         passwordInput.remove();
     }
+
     //BOTÓN MENÚ PERFIL
     if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 1) {
         pantalla = 3;
@@ -457,6 +427,7 @@ function mousePressed() {
     if (mouseX >= 265 && pantalla == 3) {
         pantalla = 1;
     }
+
     // BOTÓN ENTRAR REGISTRO
     if (mouseX >= 124 && mouseX <= 246 && mouseY >= 623 && mouseY <= 646 && pantalla == 0) {
         pantalla = 2;
@@ -472,12 +443,7 @@ function mousePressed() {
         direccionInput.position(66, 475);
         direccionInput.size(255, 15);
 
-
     }
-
-
-
-
 
     // BOTÓN REGISTRO VOLVER 
     if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 2) {
@@ -508,10 +474,12 @@ function mousePressed() {
 
 
     }
+
     //BOTÓN SANDWICH CRIOLLO
     if (mouseX >= 34 && mouseX <= 343 && mouseY >= 336 && mouseY <= 417 && pantalla == 1) {
         pantalla = 4;
     }
+
     //BOTÓN SANDWICH CUBANO
     if (mouseX >= 34 && mouseX <= 343 && mouseY >= 456 && mouseY <= 536 && pantalla == 1) {
         pantalla = 5;
@@ -530,6 +498,7 @@ function mousePressed() {
         plato3.cantidad = 0;
         plato4.cantidad = 0;
     }
+
     //BOTÓN DEVOLVER SANDWICH ITALIANO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 6) {
         pantalla = 1;
@@ -539,6 +508,7 @@ function mousePressed() {
         plato4.cantidad = 0;
 
     }
+
     //BOTÓN DEVOLVER SANDWICH CRIOLLO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 4) {
         pantalla = 1;
@@ -547,6 +517,7 @@ function mousePressed() {
         plato3.cantidad = 0;
         plato4.cantidad = 0;
     }
+
     //BOTÓN DEVOLVER SANDWICH VEGETARIANO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 7) {
         pantalla = 1;
@@ -555,11 +526,13 @@ function mousePressed() {
         plato3.cantidad = 0;
         plato4.cantidad = 0;
     }
+
     //BOTÓN DEVOLVER HISTORIAL DE PEDIDO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 10) {
         pantalla = 1;
 
     }
+
     //BOTÓN IR AL HISTORIAL DE PEDIDO
     if (mouseX >= 0 && mouseX <= 266 && mouseY >= 96 && mouseY <= 162 && pantalla == 3) {
         pantalla = 10;
@@ -574,6 +547,7 @@ function mousePressed() {
         passwordInput.position(66, 480);
         passwordInput.size(255, 15);
     }
+
     //BOTÓN DEVOLVER CERRAR SESION
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 9) {
         pantalla = 1;
@@ -594,32 +568,27 @@ function mousePressed() {
     if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 4) {
         //  console.log(plato1.cantidad);
         plato1.cantidad++;
-
     }
 
     if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 4) {
         plato1.cantidad--;
-
-
     }
 
     if (plato1.cantidad < 0) {
-
         plato1.cantidad = 0;
     }
+
     //INCREMENTAR CANTIDAD DE SANDWICH CUBANO
     if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 5) {
         //   console.log(plato1.cantidad);
         plato2.cantidad++;
-
     }
+
     if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 5) {
         plato2.cantidad--;
-
-
     }
-    if (plato2.cantidad < 0) {
 
+    if (plato2.cantidad < 0) {
         plato2.cantidad = 0;
     }
 
@@ -627,60 +596,60 @@ function mousePressed() {
     if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 6) {
         //  console.log(plato1.cantidad);
         plato3.cantidad++;
-
-
     }
+    
     if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 6) {
         plato3.cantidad--;
-
-
     }
-    if (plato3.cantidad < 0) {
 
+    if (plato3.cantidad < 0) {
         plato3.cantidad = 0;
     }
+
     //INCREMENTAR CANTIDAD DE SANDWICH VEGETARIANO
     if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 7) {
         //  console.log(plato1.cantidad);
         plato4.cantidad++;
-
     }
 
     if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 7) {
         plato4.cantidad--;
-
-
     }
-    if (plato4.cantidad < 0) {
 
+    if (plato4.cantidad < 0) {
         plato4.cantidad = 0;
     }
+
     //BOTÓN COMPRAR SANDWICH CRIOLLO
     if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 && pantalla == 4) {
         pantalla = 11;
-
     }
+
     //BOTÓN COMPRAR SANDWICH CUBANO
     if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 && pantalla == 5) {
         pantalla = 11;
-
     }
 
     //BOTÓN COMPRAR SANDWICH ITALIANO
     if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 && pantalla == 6) {
         pantalla = 11;
-
     }
+
     //BOTÓN COMPRAR SANDWICH VEGETARIANO
     if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 && pantalla == 7) {
         pantalla = 11;
+    }
 
+    //BOTÓN NO  ACOMPAÑAMIENTOS
+    if (mouseX >= 96 && mouseX <= 142 && mouseY >= 430 && mouseY <= 472 && pantalla == 12) {
+        pantalla = 15;
     }
 
     //BOTÓN SI ADICIONES 
     if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 11) {
         pantalla = 13;
     }
+
     //BOTÓN NO  ADICIONES
     if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 11) {
         pantalla = 12;
@@ -695,17 +664,16 @@ function mousePressed() {
     if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 12) {
         pantalla = 14;
     }
-    //BOTÓN NO  ACOMPAÑAMIENTOS
-    if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 12) {
-        pantalla = 15;
-    }
 
     //BOTÓN DEVOLVER ACOMPAÑAMIENTOS
     if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 12) {
         pantalla = 1;
     }
 
-
+    //DEVOLVER PAGO
+    if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 15) {
+        pantalla = 1;
+    }
 
 }
 
