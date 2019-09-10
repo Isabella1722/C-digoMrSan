@@ -402,7 +402,7 @@ function draw() {
             if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
                 cursor(HAND);
             }
-        
+
 
 
             break;
@@ -413,13 +413,13 @@ function draw() {
 
 
             break;
-            case 14:
+        case 14:
 
-                //PANTALLA   PAGO
-                image(pago, 0, 0);
-    
-    
-                break;
+            //PANTALLA   PAGO
+            image(pago, 0, 0);
+
+
+            break;
 
 
 
@@ -471,13 +471,13 @@ function mousePressed() {
         createPassword.size(255, 15);
         direccionInput.position(66, 475);
         direccionInput.size(255, 15);
-    
+
 
     }
 
-    
 
-    
+
+
 
     // BOTÓN REGISTRO VOLVER 
     if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 2) {
@@ -491,21 +491,22 @@ function mousePressed() {
         userInput.size(255, 15);
         passwordInput.position(66, 480);
         passwordInput.size(255, 15);
-        
+
     }
 
     // BOTÓN REGISTRO
     if (mouseX >= 159 && mouseX <= 214 && mouseY >= 551 && mouseY <= 608 && pantalla == 2) {
-        arrayUsuario.push(new Usuario(emailInput.value(), createPassword.value(), direccionInput.value()));
-        for(let i = 0; i<arrayUsuario.lenght; i++){
-        console.log(arrayUsuario.lenght);
-        }
+        //arrayUsuario.push(new Usuario(emailInput.value(), createPassword.value(), direccionInput.value()));
+        /*for (let i = 0; i < arrayUsuario.lenght; i++) {
+            arrayUsuario.push(new Usuario(emailInput.value(), createPassword.value(), direccionInput.value()));
+            console.log(arrayUsuario.lenght);
+        }*/
         pantalla = 1;
         emailInput.hide();
         createPassword.hide();
         direccionInput.hide();
-        
-        
+
+
     }
     //BOTÓN SANDWICH CRIOLLO
     if (mouseX >= 34 && mouseX <= 343 && mouseY >= 336 && mouseY <= 417 && pantalla == 1) {
@@ -680,30 +681,30 @@ function mousePressed() {
     if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 11) {
         pantalla = 13;
     }
-     //BOTÓN NO  ADICIONES
-if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 11) {
-    pantalla = 12;
-}
+    //BOTÓN NO  ADICIONES
+    if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 11) {
+        pantalla = 12;
+    }
 
-   //BOTÓN DEVOLVER ADICIONES
-   if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 13) {
-   pantalla=1;
-}
+    //BOTÓN DEVOLVER ADICIONES
+    if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 13) {
+        pantalla = 1;
+    }
 
-   //BOTÓN SI ACOMPAÑAMIENTOS 
-   if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 12) {
-    pantalla = 14;
-}
- //BOTÓN NO  ACOMPAÑAMIENTOS
-if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 12) {
-pantalla = 15;
-}
+    //BOTÓN SI ACOMPAÑAMIENTOS 
+    if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 12) {
+        pantalla = 14;
+    }
+    //BOTÓN NO  ACOMPAÑAMIENTOS
+    if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 12) {
+        pantalla = 15;
+    }
 
-//BOTÓN DEVOLVER ACOMPAÑAMIENTOS
-if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 12) {
-pantalla=1;
-}
-  
+    //BOTÓN DEVOLVER ACOMPAÑAMIENTOS
+    if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 12) {
+        pantalla = 1;
+    }
+
 
 
 }
