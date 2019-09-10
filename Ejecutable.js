@@ -72,6 +72,13 @@ function draw() {
                 cursor(HAND);
             }
 
+            fill(0);
+            textSize(15);
+            text("Usuario",63,385);
+
+            fill(0);
+            textSize(15);
+            text("Contraseña",60,466);
             break;
 
 
@@ -99,6 +106,7 @@ function draw() {
             if (mouseX >= 35 && mouseX <= 345 && mouseY >= 689 && mouseY <= 765) {
                 cursor(HAND);
             }
+
             fill(0);
             textSize(16);
             textAlign(LEFT);
@@ -183,6 +191,18 @@ function draw() {
             // if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 ) {
             //     cursor(HAND);
             // }
+
+            fill(0);
+            textSize(15);
+            text("Nombre",60,270);
+          
+            textSize(15);
+            text("Correo electrónico",60,365);
+
+            textSize(15);
+            text("Contraseña",60,456);
+
+
 
 
             break;
