@@ -31,6 +31,24 @@ function preload() {
 function setup() {
     createCanvas(375, 812);
     pantalla = 0;
+    /*switch (pantalla) {
+        case 0:
+            userInput = createInput('');
+            passwordInput = createInput('', 'password');
+            userInput.position(66, 405);
+            userInput.size(255, 15);
+            passwordInput.position(66, 480);
+            passwordInput.size(255, 15);
+
+            break;
+        case 1:
+
+
+            break;
+        default:
+            break;
+
+    }*/
 
 
 }
@@ -38,18 +56,14 @@ function draw() {
     background(0);
     cursor(ARROW);
     switch (pantalla) {
-       
+
 
         case 0:
             //PANTALLA INICIO
             image(inicio, 0, 0);
             if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589) {
                 cursor(HAND);
-               
-        
-        
             }
-
 
             break;
 
@@ -58,7 +72,7 @@ function draw() {
 
             //PANTALLA Menu
             image(menu, 0, 0);
-            
+
             break;
 
 
@@ -115,32 +129,35 @@ function draw() {
 }
 
 function mousePressed() {
-    print(mouseX + " " + mouseY + " \n");
+    //print(mouseX + " " + mouseY + " \n");
     //BOTÓN ENTRAR 
-    if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0) {
+    if (/*userInput.value() == 'Esteban' && passwordInput.value() == 'porfavor' &&*/
+        (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0)) {
         cursor(HAND);
         pantalla = 1;
+        //userInput.remove();
+        //passwordInput.remove();
 
 
     }
     //BOTÓN MENÚ HAMBURGUESA
-   if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 1) {
+    if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 1) {
         cursor(HAND);
         pantalla = 3;
 
 
     }
-  // BOTÓN REGISTRO
-    if (mouseX >= 124 && mouseX <= 246 && mouseY >= 623 && mouseY <= 646 && pantalla == 0 ) {
+    // BOTÓN REGISTRO
+    if (mouseX >= 124 && mouseX <= 246 && mouseY >= 623 && mouseY <= 646 && pantalla == 0) {
         cursor(HAND);
         pantalla = 2;
 
 
     }
-  // BOTÓN REGISTRO VOLVER MENU
+    // BOTÓN REGISTRO VOLVER MENU
     if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 2) {
         cursor(HAND);
-        pantalla = 1 ;
+        pantalla = 1;
 
 
     }
