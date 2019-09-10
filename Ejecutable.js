@@ -6,6 +6,7 @@ let platosArreglo;
 let sandwichCriollo, sandwichCubano, sandwichItaliano, sandwichVegetariano;
 let cantidad;
 let plato1, plato2, plato3, plato4;
+//:v
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -120,7 +121,6 @@ function draw() {
             //textSize(16);
             text(plato4.precio, 176, 750);
             //textSize(16);
-<<<<<<< HEAD
 
 
             /*
@@ -165,10 +165,6 @@ function draw() {
     
             }
 */
-=======
-            
-            
->>>>>>> bc00a5684fc558c4ac583d3979d64291fd3043fd
 
 
             break;
@@ -214,7 +210,6 @@ function draw() {
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
             }
-<<<<<<< HEAD
 
             this.idSandwich = 1;
             this.nombre = "Sandwich Criollo";
@@ -233,26 +228,6 @@ function draw() {
             textSize(16);
             text(this.cantidad, 185, 503);
 
-=======
-           
-            /*this.idSandwich= 1;
-            this.nombre="Sandwich Criollo";
-            this.ingredientes="Carne de res desmechada,hogo, maduro y maíz tierno";
-            this.precio=13400;*/
-            fill(0);
-            textSize(16);
-            textAlign(CENTER);
-            text(plato1.idSandwich,79,130);
-          
-            fill(0);
-            textSize(13);
-            text(plato1.ingredientes,190,371);
-         
-
-            fill(255);
-            textSize(22);
-            text(plato1.cantidad,188,510);
->>>>>>> bc00a5684fc558c4ac583d3979d64291fd3043fd
 
 
 
@@ -267,7 +242,6 @@ function draw() {
                 cursor(HAND);
             }
 
-<<<<<<< HEAD
             this.idSandwich = 2;
             this.nombre = "Sandwich Cubano";
             this.ingredientes = "Jamón de cerdo,queso mozzarella, lechuga,tomate";
@@ -280,26 +254,6 @@ function draw() {
             fill(0);
             textSize(13);
             text(this.ingredientes, 190, 371);
-=======
-             //   this.idSandwich = 2;
-             //   this.nombre = "Sandwich Cubano";
-             //   this.ingredientes= "Jamón de cerdo,queso mozzarella, lechuga,tomate";
-              //  this.precio = 9200;
-                fill(0);
-            textSize(16);
-            textAlign(CENTER);
-            text(plato2.idSandwich,79,130);
-          
-            fill(0);
-            textSize(13);
-            text(plato2.ingredientes,190,371);
-
-
-            
-            fill(255);
-            textSize(22);
-            text(plato2.cantidad,188,510);
->>>>>>> bc00a5684fc558c4ac583d3979d64291fd3043fd
             break;
 
         case 6:
@@ -310,30 +264,18 @@ function draw() {
                 cursor(HAND);
 
             }
-         //   this.idSandwich = 3;
-         //   this.nombre = "Sandwich Italiano";
-         //   this.ingredientes = "Roast beff,jamón,salami,queso parmesano,pasta,tomate";
-         //   this.precio = 13400;
+            //   this.idSandwich = 3;
+            //   this.nombre = "Sandwich Italiano";
+            //   this.ingredientes = "Roast beff,jamón,salami,queso parmesano,pasta,tomate";
+            //   this.precio = 13400;
             fill(0);
             textSize(16);
             textAlign(CENTER);
-<<<<<<< HEAD
             text(this.idSandwich, 79, 130);
 
             fill(0);
             textSize(13);
             text(this.ingredientes, 190, 371);
-=======
-            text(plato3.idSandwich,79,130);
-          
-            fill(0);
-            textSize(13);
-            text(plato3.ingredientes,190,371);
-
-            fill(255);
-            textSize(22);
-            text(plato3.cantidad,188,510);
->>>>>>> bc00a5684fc558c4ac583d3979d64291fd3043fd
             break;
 
         case 7:
@@ -345,38 +287,19 @@ function draw() {
 
             }
 
-<<<<<<< HEAD
             this.idSandwich = 4;
             this.nombre = "Sandwich Vegetariano";
             this.ingredientes = "Pimentón,champiñones,tomate,maíz tierno y zanahoria";
             this.precio = 11300;
-=======
-           // this.idSandwich = 4;
-           //     this.nombre = "Sandwich Vegetariano";
-            //    this.ingredientes= "Pimentón,champiñones,tomate,maíz tierno y zanahoria";
-            //    this.precio = 11300;
->>>>>>> bc00a5684fc558c4ac583d3979d64291fd3043fd
 
             fill(0);
             textSize(16);
             textAlign(CENTER);
-<<<<<<< HEAD
             text(this.idSandwich, 79, 130);
 
             fill(0);
             textSize(13);
             text(this.ingredientes, 190, 371);
-=======
-            text(plato4.idSandwich,79,130);
-          
-            fill(0);
-            textSize(13);
-            text(plato4.ingredientes,190,371);
-
-            fill(255);
-            textSize(22);
-            text(plato4.cantidad,188,510);
->>>>>>> bc00a5684fc558c4ac583d3979d64291fd3043fd
             break;
         case 8:
 
@@ -489,40 +412,40 @@ function mousePressed() {
     //BOTÓN DEVOLVER SANDWICH CUBANO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 5) {
         pantalla = 1;
-        plato1.cantidad=0;
-        plato2.cantidad=0;
-        plato3.cantidad=0;
-        plato4.cantidad=0;
+        plato1.cantidad = 0;
+        plato2.cantidad = 0;
+        plato3.cantidad = 0;
+        plato4.cantidad = 0;
     }
     //BOTÓN DEVOLVER SANDWICH ITALIANO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 6) {
         pantalla = 1;
-        plato1.cantidad=0;
-        plato2.cantidad=0;
-        plato3.cantidad=0;
-        plato4.cantidad=0;
-        
+        plato1.cantidad = 0;
+        plato2.cantidad = 0;
+        plato3.cantidad = 0;
+        plato4.cantidad = 0;
+
     }
     //BOTÓN DEVOLVER SANDWICH CRIOLLO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 4) {
         pantalla = 1;
-        plato1.cantidad=0;
-        plato2.cantidad=0;
-        plato3.cantidad=0;
-        plato4.cantidad=0;
+        plato1.cantidad = 0;
+        plato2.cantidad = 0;
+        plato3.cantidad = 0;
+        plato4.cantidad = 0;
     }
     //BOTÓN DEVOLVER SANDWICH VEGETARIANO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 7) {
         pantalla = 1;
-        plato1.cantidad=0;
-        plato2.cantidad=0;
-        plato3.cantidad=0;
-        plato4.cantidad=0;
+        plato1.cantidad = 0;
+        plato2.cantidad = 0;
+        plato3.cantidad = 0;
+        plato4.cantidad = 0;
     }
     //BOTÓN DEVOLVER HISTORIAL DE PEDIDO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 10) {
         pantalla = 1;
-        
+
     }
     //BOTÓN IR AL HISTORIAL DE PEDIDO
     if (mouseX >= 0 && mouseX <= 266 && mouseY >= 96 && mouseY <= 162 && pantalla == 3) {
@@ -548,21 +471,13 @@ function mousePressed() {
         passwordInput.size(255, 15);
     }
 
-<<<<<<< HEAD
     //INCREMENTAR CANTIDAD DE SANDWICH
     if (mouseX >= 265 && mouseX <= 265 && mouseY >= 488 && mouseY <= 527 && pantalla == 4) {
         this.cantidad++;
-=======
-    //INCREMENTAR CANTIDAD DE SANDWICH CRIOLLO
-    if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 4) {
-        console.log(plato1.cantidad);
-        plato1.cantidad ++;
->>>>>>> bc00a5684fc558c4ac583d3979d64291fd3043fd
 
     }
 
     if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 4) {
-<<<<<<< HEAD
         this.cantidad--;
 
 
@@ -570,64 +485,32 @@ function mousePressed() {
     if (this.cantidad < 0) {
 
         this.cantidad = 0;
-=======
-        plato1.cantidad --;
-        
- 
-     }
-     if (plato1.cantidad<0){
-
-        plato1.cantidad=0;
-    }
-    //INCREMENTAR CANTIDAD DE SANDWICH CUBANO
-    if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 5) {
-        console.log(plato1.cantidad);
-        plato2.cantidad ++;
-
-    }
-
-    if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 5) {
-        plato2.cantidad --;
-        
- 
-     }
-     if (plato2.cantidad<0){
-
-        plato2.cantidad=0;
-    }
-
-    //INCREMENTAR CANTIDAD DE SANDWICH ITALIANO
-    if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 6) {
-        console.log(plato1.cantidad);
-        plato3.cantidad ++;
-
->>>>>>> bc00a5684fc558c4ac583d3979d64291fd3043fd
     }
 
     if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 6) {
-        plato3.cantidad --;
-        
- 
-     }
-     if (plato3.cantidad<0){
+        plato3.cantidad--;
 
-        plato3.cantidad=0;
+
+    }
+    if (plato3.cantidad < 0) {
+
+        plato3.cantidad = 0;
     }
     //INCREMENTAR CANTIDAD DE SANDWICH VEGETARIANO
     if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 7) {
         console.log(plato1.cantidad);
-        plato4.cantidad ++;
+        plato4.cantidad++;
 
     }
 
     if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 7) {
-        plato4.cantidad --;
-        
- 
-     }
-     if (plato4.cantidad<0){
+        plato4.cantidad--;
 
-        plato4.cantidad=0;
+
+    }
+    if (plato4.cantidad < 0) {
+
+        plato4.cantidad = 0;
     }
 
 
