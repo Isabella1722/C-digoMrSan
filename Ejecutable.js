@@ -392,6 +392,7 @@ function draw() {
             }
 
 
+
             break;
 
         case 13:
@@ -401,7 +402,7 @@ function draw() {
             if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
                 cursor(HAND);
             }
-        
+
 
 
             break;
@@ -412,13 +413,16 @@ function draw() {
 
 
             break;
-            case 14:
+        case 15:
 
-                //PANTALLA   PAGO
-                image(pago, 0, 0);
-    
-    
-                break;
+            //PANTALLA   PAGO
+            image(pago, 0, 0);
+            if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
+                cursor(HAND);
+            }
+
+
+            break;
 
 
 
@@ -654,35 +658,40 @@ function mousePressed() {
         pantalla = 11;
 
     }
-
+    //BOTÓN NO  ACOMPAÑAMIENTOS
+    if (mouseX >= 96 && mouseX <= 142 && mouseY >= 430 && mouseY <= 472 && pantalla == 12) {
+        pantalla = 15;
+    }
     //BOTÓN SI ADICIONES 
     if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 11) {
         pantalla = 13;
     }
-     //BOTÓN NO  ADICIONES
-if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 11) {
-    pantalla = 12;
-}
+    //BOTÓN NO  ADICIONES
+    if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 11) {
+        pantalla = 12;
+    }
 
-   //BOTÓN DEVOLVER ADICIONES
-   if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 13) {
-   pantalla=1;
-}
+    //BOTÓN DEVOLVER ADICIONES
+    if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 13) {
+        pantalla = 1;
+    }
 
-   //BOTÓN SI ACOMPAÑAMIENTOS 
-   if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 12) {
-    pantalla = 14;
-}
- //BOTÓN NO  ACOMPAÑAMIENTOS
-if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 12) {
-pantalla = 15;
-}
+    //BOTÓN SI ACOMPAÑAMIENTOS 
+    if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 12) {
+        pantalla = 14;
+    }
 
-//BOTÓN DEVOLVER ACOMPAÑAMIENTOS
-if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 12) {
-pantalla=1;
-}
-  
+   
+
+    //BOTÓN DEVOLVER ACOMPAÑAMIENTOS
+    if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 12) {
+        pantalla = 1;
+    }
+//DEVOLVER PAGO
+    if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 15) {
+        pantalla = 1;
+    }
+
 
 
 }
