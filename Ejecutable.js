@@ -138,7 +138,7 @@ function draw() {
 
 function mousePressed() {
     print(mouseX + "X" + mouseY + "Y \n");
-    //BOTÓN ENTRAR 
+    //BOTÓN ENTRAR
     if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0) {
         pantalla = 1;
     }
