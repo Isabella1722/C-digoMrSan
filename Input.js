@@ -6,6 +6,8 @@ class Input{
     }
 
     pintar(){
-        createInput();
+        let input;
+        input = createInput('',this.tipo);
+        input.position(this.posX,this.posY);
     }
 }
