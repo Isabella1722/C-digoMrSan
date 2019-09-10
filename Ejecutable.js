@@ -5,7 +5,7 @@ let inicio, acompa, acompaNumero, adiciones, alerta1, alerta2, cerrarSesion, con
     let platosArreglo;
     let sandwichCriollo,sandwichCubano,sandwichItaliano,sandwichVegetariano;
 let cantidad;
-let plato1, plato2, plato3,plato4;
+let plato1, plato2, plato3, plato4;
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -207,22 +207,22 @@ function draw() {
                 cursor(HAND);
             }
            
-            this.idSandwich= 1;
+            /*this.idSandwich= 1;
             this.nombre="Sandwich Criollo";
             this.ingredientes="Carne de res desmechada,hogo, maduro y maíz tierno";
-            this.precio=13400;
+            this.precio=13400;*/
             fill(0);
             textSize(16);
             textAlign(CENTER);
-            text(this.idSandwich,79,130);
+            text(plato1.idSandwich,79,130);
           
             fill(0);
             textSize(13);
-            text(this.ingredientes,190,371);
+            text(plato1.ingredientes,190,371);
          
             fill(255);
-            textSize(16);
-            text(this.cantidad,185,503);
+            textSize(20);
+            text(plato1.cantidad,185,503);
 
 
           
@@ -445,19 +445,20 @@ function mousePressed() {
     }
 
     //INCREMENTAR CANTIDAD DE SANDWICH
-    if (mouseX >= 265 && mouseX <= 265 && mouseY >= 488 && mouseY <= 527 && pantalla == 4) {
-        this.cantidad ++;
+    if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532 && pantalla == 4) {
+        console.log(plato1.cantidad);
+        plato1.cantidad ++;
 
     }
 
     if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 4) {
-        this.cantidad --;
+        plato1.cantidad --;
         
  
      }
-     if (this.cantidad<0){
+     if (plato1.cantidad<0){
 
-        this.cantidad=0;
+        plato1.cantidad=0;
     }
 
 
