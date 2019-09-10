@@ -2,10 +2,15 @@
 let pantalla;
 let inicio, acompa, acompaNumero, adiciones, alerta1, alerta2, cerrarSesion, confirmarDir, efectivo, pago, factura,
     historialPedido, menu, menuP, papitas, registro, sCriollo, sVegetariano, sQubano, sItaliano, tarjeta;
+<<<<<<< HEAD
     let platosArreglo;
     let sandwichCriollo,sandwichCubano,sandwichItaliano,sandwichVegetariano;
 let cantidad;
 let plato1, plato2, plato3,plato4;
+=======
+let platosArreglo;
+let sandwichCriollo, sandwichCubano, sandwichItaliano, sandwichVegetariano;
+>>>>>>> 30f8b86495da85bf2e852bb7470cbab0fe667863
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -35,18 +40,14 @@ function preload() {
 function setup() {
     createCanvas(375, 812);
     pantalla = 0;
-    /*switch (pantalla) {
-        case 0:
-            userInput = createInput('');
-            passwordInput = createInput('', 'password');
-            userInput.position(66, 405);
-            userInput.size(255, 15);
-            passwordInput.position(66, 480);
-            passwordInput.size(255, 15);
+    userInput = createInput('');
+    passwordInput = createInput('', 'password');
+    userInput.position(66, 405);
+    userInput.size(255, 15);
+    passwordInput.position(66, 480);
+    passwordInput.size(255, 15);
 
-            break;
-        case 1:
-
+<<<<<<< HEAD
 
             break;
         default:
@@ -58,6 +59,9 @@ function setup() {
     plato2 = new Plato (2,"Sandwich Cubano","Jamón de cerdo,queso mozzarella, lechuga,tomate",9200,0);
     plato3 = new Plato (3,"Sandwich Italiano","Roast beff,jamón,salami,queso parmesano,pasta,tomate",13400,0);
     plato4 = new Plato (4,"Sandwich Vegetariano","Pimentón,champiñones,tomate,maíz tierno y zanahoria",11300,0);
+=======
+    platosArreglo = [];
+>>>>>>> 30f8b86495da85bf2e852bb7470cbab0fe667863
 
 cantidad=0;
 }
@@ -87,7 +91,7 @@ function draw() {
 
             //textAlign(CENTER);
             //text(this.nombre,178,365);
-           // textSize(16);
+            // textSize(16);
 
             if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66) {
                 cursor(HAND);
@@ -101,7 +105,7 @@ function draw() {
             if (mouseX >= 34 && mouseX <= 343 && mouseY >= 570 && mouseY <= 652) {
                 cursor(HAND);
             }
-            if (mouseX >= 35 && mouseX <= 345 && mouseY >= 689 && mouseY <= 765 ) {
+            if (mouseX >= 35 && mouseX <= 345 && mouseY >= 689 && mouseY <= 765) {
                 cursor(HAND);
             }
             text(plato1.nombre,176,370);
@@ -180,23 +184,23 @@ function draw() {
                 cursor(HAND);
             }
             if (mouseX >= 159 && mouseX <= 214 && mouseY >= 551 && mouseY <= 608) {
-             cursor(HAND);
+                cursor(HAND);
             }
-           // if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 ) {
-           //     cursor(HAND);
-           // }
+            // if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 ) {
+            //     cursor(HAND);
+            // }
 
-          
+
             break;
 
         case 3:
 
             //PANTALLA MENU PERFIL
             image(menuP, 0, 0);
-            if (mouseX >= 0 && mouseX <= 266 && mouseY >= 96 && mouseY <= 162 ) {
+            if (mouseX >= 0 && mouseX <= 266 && mouseY >= 96 && mouseY <= 162) {
                 cursor(HAND);
             }
-            if (mouseX >= 2 && mouseX <= 257 && mouseY >=196 && mouseY <= 261 ) {
+            if (mouseX >= 2 && mouseX <= 257 && mouseY >= 196 && mouseY <= 261) {
                 cursor(HAND);
             }
 
@@ -209,6 +213,7 @@ function draw() {
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
             }
+<<<<<<< HEAD
            
             this.idSandwich= 1;
             this.nombre="Sandwich Criollo";
@@ -229,6 +234,25 @@ function draw() {
 
 
           
+=======
+
+            this.idSandwich = 1;
+            this.nombre = "Sandwich Criollo";
+            this.ingredientes = "Carne de res desmechada,hogo, maduro y maíz tierno";
+            this.precio = 13400;
+
+            textSize(16);
+            textAlign(CENTER);
+            text(this.idSandwich, 79, 132);
+
+
+            textSize(13);
+            text(this.ingredientes, 190, 371);
+
+
+            textSize(16);
+            text(this.cantidad, 187, 504);
+>>>>>>> 30f8b86495da85bf2e852bb7470cbab0fe667863
 
             break;
 
@@ -241,6 +265,7 @@ function draw() {
                 cursor(HAND);
             }
 
+<<<<<<< HEAD
                 this.idSandwich = 2;
                 this.nombre = "Sandwich Cubano";
                 this.ingredientes= "Jamón de cerdo,queso mozzarella, lechuga,tomate";
@@ -253,19 +278,25 @@ function draw() {
             fill(0);
             textSize(13);
             text(this.ingredientes,190,371);
+=======
+            this.idSandwich = 2;
+            this.nombre = "Sandwich Cubano";
+            this.ingredientes = "Carne de res desmechada,hogo, maduro y maíz tierno";
+            this.precio = 9200;
+>>>>>>> 30f8b86495da85bf2e852bb7470cbab0fe667863
             break;
 
         case 6:
 
-             //PANTALLA SANDWICH CUBANO
-             image(sItaliano, 0, 0);
-             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 ) {
+            //PANTALLA SANDWICH CUBANO
+            image(sItaliano, 0, 0);
+            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
-                
+
             }
             this.idSandwich = 3;
             this.nombre = "Sandwich Italiano";
-            this.ingredientes= "Roast beff,jamón,salami,queso parmesano,pasta,tomate";
+            this.ingredientes = "Roast beff,jamón,salami,queso parmesano,pasta,tomate";
             this.precio = 13400;
             fill(0);
             textSize(16);
@@ -281,12 +312,13 @@ function draw() {
 
             //PANTALLA SANDWICH VEGETARIANO
             image(sVegetariano, 0, 0);
-            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 ) {
+            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
 
             }
 
             this.idSandwich = 4;
+<<<<<<< HEAD
                 this.nombre = "Sandwich Vegetariano";
                 this.ingredientes= "Pimentón,champiñones,tomate,maíz tierno y zanahoria";
                 this.precio = 11300;
@@ -299,6 +331,11 @@ function draw() {
             fill(0);
             textSize(13);
             text(this.ingredientes,190,371);
+=======
+            this.nombre = "Sandwich Vegetariano";
+            this.ingredientes = "Pimentón, cebolla, champiñones,tomate,maíz tierno,pimienta y zanahoria";
+            this.precio = 11300;
+>>>>>>> 30f8b86495da85bf2e852bb7470cbab0fe667863
             break;
         case 8:
 
@@ -308,11 +345,11 @@ function draw() {
 
             //PANTALLA CERRAR SESION
             image(cerrarSesion, 0, 0);
-            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 ) {
+            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
             }
 
-            if (mouseX >= 161 && mouseX <= 224 && mouseY >= 533 && mouseY <= 589 ) {
+            if (mouseX >= 161 && mouseX <= 224 && mouseY >= 533 && mouseY <= 589) {
                 cursor(HAND);
             }
             break;
@@ -321,11 +358,11 @@ function draw() {
 
             //PANTALLA HISTORIAL PEDIDO
             image(historialPedido, 0, 0);
-            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 ) {
+            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
             }
 
-         
+
             break;
 
 
@@ -334,8 +371,8 @@ function draw() {
 }
 
 function mousePressed() {
-    print( " X" +mouseX + " Y"+ mouseY );
-    print( "P "+pantalla);
+    print(" X" + mouseX + " Y" + mouseY);
+    print("P " + pantalla);
     //BOTÓN SANDWICH ITALIANO
     if (mouseX >= 34 && mouseX <= 343 && mouseY >= 570 && mouseY <= 652 && pantalla == 1) {
         pantalla = 6;
@@ -343,6 +380,8 @@ function mousePressed() {
     //BOTÓN ENTRAR
     if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0) {
         pantalla = 1;
+        userInput.remove();
+        passwordInput.remove();
     }
     //BOTÓN MENÚ PERFIL
     if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 1) {
@@ -354,15 +393,38 @@ function mousePressed() {
     // BOTÓN ENTRAR REGISTRO
     if (mouseX >= 124 && mouseX <= 246 && mouseY >= 623 && mouseY <= 646 && pantalla == 0) {
         pantalla = 2;
+        userInput.remove();
+        passwordInput.remove();
+        emailInput = createInput('', 'email');
+        createPassword = createInput('');
+        direccionInput = createInput('', 'adress');
+        emailInput.position(66, 285);
+        emailInput.size(255, 15);
+        createPassword.position(66, 380);
+        createPassword.size(255, 15);
+        direccionInput.position(66, 475);
+        direccionInput.size(255, 15);
     }
     // BOTÓN REGISTRO VOLVER 
     if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 2) {
         pantalla = 0;
+        emailInput.remove();
+        createPassword.remove();
+        direccionInput.remove();
+        userInput = createInput('');
+        passwordInput = createInput('', 'password');
+        userInput.position(66, 405);
+        userInput.size(255, 15);
+        passwordInput.position(66, 480);
+        passwordInput.size(255, 15);
     }
-     
+
     // BOTÓN REGISTRO
-    if (mouseX >= 159 && mouseX <= 214 && mouseY >= 551 && mouseY <= 608 && pantalla ==2 ) {
-       pantalla = 1;
+    if (mouseX >= 159 && mouseX <= 214 && mouseY >= 551 && mouseY <= 608 && pantalla == 2) {
+        pantalla = 1;
+        emailInput.remove();
+        createPassword.remove();
+        direccionInput.remove();
     }
     //BOTÓN SANDWICH CRIOLLO
     if (mouseX >= 34 && mouseX <= 343 && mouseY >= 336 && mouseY <= 417 && pantalla == 1) {
@@ -372,22 +434,22 @@ function mousePressed() {
     if (mouseX >= 34 && mouseX <= 343 && mouseY >= 456 && mouseY <= 536 && pantalla == 1) {
         pantalla = 5;
     }
-    
-     //BOTÓN SANDWICH VEGETARIANO
-     if (mouseX >= 35 && mouseX <= 345 && mouseY >= 689 && mouseY <= 765 && pantalla == 1) {
+
+    //BOTÓN SANDWICH VEGETARIANO
+    if (mouseX >= 35 && mouseX <= 345 && mouseY >= 689 && mouseY <= 765 && pantalla == 1) {
         pantalla = 7;
     }
 
-     //BOTÓN DEVOLVER SANDWICH CUBANO
-     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 5) {
+    //BOTÓN DEVOLVER SANDWICH CUBANO
+    if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 5) {
         pantalla = 1;
     }
     //BOTÓN DEVOLVER SANDWICH ITALIANO
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 6) {
         pantalla = 1;
     }
-     //BOTÓN DEVOLVER SANDWICH CRIOLLO
-     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 4) {
+    //BOTÓN DEVOLVER SANDWICH CRIOLLO
+    if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 4) {
         pantalla = 1;
     }
     //BOTÓN DEVOLVER SANDWICH VEGETARIANO
@@ -402,11 +464,11 @@ function mousePressed() {
     if (mouseX >= 0 && mouseX <= 266 && mouseY >= 96 && mouseY <= 162 && pantalla == 3) {
         pantalla = 10;
     }
-  //BOTÓN IR A CERRAR SESION
-    if (mouseX >= 2 && mouseX <= 257 && mouseY >=196 && mouseY <= 261 && pantalla == 3 ) {
+    //BOTÓN IR A CERRAR SESION
+    if (mouseX >= 2 && mouseX <= 257 && mouseY >= 196 && mouseY <= 261 && pantalla == 3) {
         pantalla = 9;
     }
-//BOTÓN DEVOLVER CERRAR SESION
+    //BOTÓN DEVOLVER CERRAR SESION
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 9) {
         pantalla = 1;
     }
@@ -414,6 +476,12 @@ function mousePressed() {
     //BOTÓN CERRAR DEFINITIVAMENTE SESION
     if (mouseX >= 161 && mouseX <= 224 && mouseY >= 533 && mouseY <= 589 && pantalla == 9) {
         pantalla = 0;
+        userInput = createInput('');
+        passwordInput = createInput('', 'password');
+        userInput.position(66, 405);
+        userInput.size(255, 15);
+        passwordInput.position(66, 480);
+        passwordInput.size(255, 15);
     }
 
     //INCREMENTAR CANTIDAD DE SANDWICH
