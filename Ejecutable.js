@@ -50,7 +50,7 @@ function setup() {
     plato3 = new Plato(3, "Sandwich Italiano", "Roast beff,jamón,salami,queso parmesano,pasta,tomate", 13400, 0);
     plato4 = new Plato(4, "Sandwich Vegetariano", "Pimentón,champiñones,tomate,maíz tierno y zanahoria", 11300, 0);
 
-
+    arrayUsuario = [];
 }
 //platosArreglo = [];
 
@@ -417,7 +417,14 @@ function mousePressed() {
         createPassword.size(255, 15);
         direccionInput.position(66, 475);
         direccionInput.size(255, 15);
+    
+
     }
+
+    
+
+    
+
     // BOTÓN REGISTRO VOLVER 
     if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 2) {
         pantalla = 0;
@@ -430,14 +437,21 @@ function mousePressed() {
         userInput.size(255, 15);
         passwordInput.position(66, 480);
         passwordInput.size(255, 15);
+        
     }
 
     // BOTÓN REGISTRO
     if (mouseX >= 159 && mouseX <= 214 && mouseY >= 551 && mouseY <= 608 && pantalla == 2) {
+        arrayUsuario.push(new Usuario(emailInput.value(), createPassword.value(), direccionInput.value()));
+        for(let i = 0; i<arrayUsuario.lenght; i++){
+        console.log(arrayUsuario.lenght);
+        }
         pantalla = 1;
-        emailInput.remove();
-        createPassword.remove();
-        direccionInput.remove();
+        emailInput.hide();
+        createPassword.hide();
+        direccionInput.hide();
+        
+        
     }
     //BOTÓN SANDWICH CRIOLLO
     if (mouseX >= 34 && mouseX <= 343 && mouseY >= 336 && mouseY <= 417 && pantalla == 1) {
@@ -498,6 +512,12 @@ function mousePressed() {
     //BOTÓN CERRAR SESION
     if (mouseX >= 2 && mouseX <= 257 && mouseY >= 196 && mouseY <= 261 && pantalla == 3) {
         pantalla = 0;
+        userInput = createInput('');
+        passwordInput = createInput('', 'password');
+        userInput.position(66, 405);
+        userInput.size(255, 15);
+        passwordInput.position(66, 480);
+        passwordInput.size(255, 15);
     }
     //BOTÓN DEVOLVER CERRAR SESION
     if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 && pantalla == 9) {
