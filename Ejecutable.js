@@ -2,6 +2,8 @@
 let pantalla;
 let inicio, acompa, acompaNumero, adiciones, alerta1, alerta2, cerrarSesion, confirmarDir, efectivo, pago, factura,
     historialPedido, menu, menuP, papitas, registro, sCriollo, sVegetariano, sQubano, sItaliano, tarjeta;
+    let platosArreglo;
+    let sandwichCriollo,sandwichCubano,sandwichItaliano,sandwichVegetariano;
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -49,7 +51,7 @@ function setup() {
             break;
 
     }*/
-
+    platosArreglo = [];
 
 }
 function draw() {
@@ -75,6 +77,11 @@ function draw() {
 
             //PANTALLA MENU
             image(menu, 0, 0);
+
+            //textAlign(CENTER);
+            //text(this.nombre,178,365);
+           // textSize(16);
+
             if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66) {
                 cursor(HAND);
             }
@@ -130,6 +137,24 @@ function draw() {
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
             }
+           
+            this.idSandwich= 1;
+            this.nombre="Sandwich Criollo";
+            this.ingredientes="Carne de res desmechada,hogo, maduro y maíz tierno";
+            this.precio=13400;
+            
+            textSize(16);
+            textAlign(CENTER);
+            text(this.idSandwich,79,132);
+          
+
+            textSize(13);
+            text(this.ingredientes,190,371);
+         
+
+            textSize(16);
+            text(this.cantidad,187,504);
+
             break;
 
 
@@ -140,6 +165,11 @@ function draw() {
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
             }
+
+                this.idSandwich = 2;
+                this.nombre = "Sandwich Cubano";
+                this.ingredientes= "Carne de res desmechada,hogo, maduro y maíz tierno";
+                this.precio = 9200;
             break;
 
         case 6:
@@ -148,7 +178,12 @@ function draw() {
              image(sItaliano, 0, 0);
              if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 ) {
                 cursor(HAND);
+                
             }
+            this.idSandwich = 3;
+            this.nombre = "Sandwich Italiano";
+            this.ingredientes= "Roast beff,jamón,salami,queso parmesano,pasta,tomate";
+            this.precio = 13400;
             break;
 
         case 7:
@@ -157,7 +192,13 @@ function draw() {
             image(sVegetariano, 0, 0);
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59 ) {
                 cursor(HAND);
+
             }
+
+            this.idSandwich = 4;
+                this.nombre = "Sandwich Vegetariano";
+                this.ingredientes= "Pimentón, cebolla, champiñones,tomate,maíz tierno,pimienta y zanahoria";
+                this.precio = 11300;
             break;
         case 8:
 
