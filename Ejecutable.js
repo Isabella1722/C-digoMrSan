@@ -246,6 +246,10 @@ function draw() {
             textSize(22);
             text(plato1.cantidad,188,510);
 
+            
+            if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 ) {
+                cursor(HAND);
+                }
 
 
 
@@ -275,6 +279,9 @@ function draw() {
             fill(255);
             textSize(22);
             text(plato2.cantidad,188,510);
+            if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 ) {
+                cursor(HAND);
+                }
             break;
 
         case 6:
@@ -298,6 +305,10 @@ function draw() {
             fill(255);
             textSize(22);
             text(plato3.cantidad,188,510);
+
+            if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 ) {
+                cursor(HAND);
+                }
             break;
 
         case 7:
@@ -322,6 +333,9 @@ function draw() {
             fill(255);
             textSize(22);
             text(plato4.cantidad,188,510);
+            if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 ) {
+                cursor(HAND);
+                }
             break;
         case 8:
 
@@ -579,6 +593,27 @@ function mousePressed() {
 
         plato4.cantidad = 0;
     }
+     //BOTÓN COMPRAR SANDWICH CRIOLLO
+     if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 && pantalla == 4) {
+      pantalla=11;
+  
+      }
+      //BOTÓN COMPRAR SANDWICH CUBANO
+     if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 && pantalla == 5) {
+        pantalla=11;
+    
+        }
+
+        //BOTÓN COMPRAR SANDWICH ITALIANO
+     if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 && pantalla == 6) {
+        pantalla=11;
+    
+        }
+           //BOTÓN COMPRAR SANDWICH VEGETARIANO
+     if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692 && pantalla == 7) {
+        pantalla=11;
+    
+        }
 
 
 }
