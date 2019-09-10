@@ -17,7 +17,7 @@ function preload() {
     factura = loadImage("data/Factura.jpg");
     historialPedido = loadImage("data/HistorialPedido.jpg");
     menu = loadImage("data/Menu.jpg");
-    menuP = loadImage("data/menuPerfil.jpg");
+    menuP = loadImage("data/menuPerfil2.jpg");
     papitas = loadImage("data/Papitas.jpg");
     registro = loadImage("data/Registro.jpg");
     sCriollo = loadImage("data/SCriollo.jpg");
