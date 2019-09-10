@@ -100,7 +100,7 @@ function draw() {
             }
             fill(0);
             textSize(16);
-            textAlign(CORNER);
+            textAlign(LEFT);
             text(plato1.nombre,176,370);
     
             text(plato1.precio,176,395);
