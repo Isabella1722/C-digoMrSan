@@ -1,15 +1,50 @@
 class Plato {
-    constructor(idSandwich, nombre, ingredientes, idAdiciones, idComplementos, precio, cantidad, evaluarAdicion, evaluarComplemento) {
+    constructor(idSandwich, nombre, ingredientes,/* idAdiciones, idComplementos*/ precio, cantidad, /*evaluarAdicion, evaluarComplemento*/) {
         this.idSandwich = idSandwich;
         this.nombre = nombre;
         this.ingredientes = ingredientes;
-        this.idAdiciones = idAdiciones;
-        this.idComplementos = idComplementos;
+        //this.idAdiciones = idAdiciones;
+       // this.idComplementos = idComplementos;
         this.precio = precio;
-        this.cantidad = cantidad;
-        this.evaluarAdicion = evaluarAdicion;
-        this.evaluarComplemento = evaluarComplemento;
+        this.cantidad =0;
+       // this.evaluarAdicion = evaluarAdicion;
+       // this.evaluarComplemento = evaluarComplemento;
+/*
+        switch (this.idSandwich) {
 
+            case 1:
+                    this.nombre = "Sandwich Criollo";
+                    this.precio = 13400;
+
+            break;
+
+
+            case 2:
+                    this.nombre = "Sandwich Cubano";
+                    this.precio = 9200;
+
+            break;
+
+
+
+            case 3:
+
+                    this.nombre = "Sandwich Italiano";
+                    this.precio = 13400;
+            break;
+
+
+
+            case 4:
+                    this.nombre = "Sandwich Vegetariano";
+                    this.precio = 11300;
+
+
+            break;
+
+
+
+        }*/
 /*
         switch (this.nombre) {
             case "Sandwich Criollo":
@@ -23,7 +58,7 @@ class Plato {
             case "Sandwich Cubano":
                 this.idSandwich = 02;
                 this.nombre = "Sandwich Cubano";
-                this.ingredientes= "Carne de res desmechada,hogo, maduro y maíz tierno";
+                this.ingredientes= "Jamón de cerdo,queso mozzarella, lechuga,tomate";
                 this.precio = 9200;
                 break;
 
