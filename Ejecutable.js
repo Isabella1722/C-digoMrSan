@@ -492,8 +492,8 @@ function mousePressed() {
     //BOTÓN ENTRAR
     if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0) {
         pantalla = 1;
-        userInput.remove();
-        passwordInput.remove();
+      //  userInput.remove();
+        //passwordInput.remove();
     }
 
     //BOTÓN MENÚ PERFIL
