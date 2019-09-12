@@ -6,6 +6,7 @@ let sandwichCriollo, sandwichCubano, sandwichItaliano, sandwichVegetariano;
 let cantidad;
 let plato1, plato2, plato3, plato4;
 let loginScreen;
+let registroScreen;
 let arrayUsuario;
 
 
@@ -36,7 +37,7 @@ function preload() {
 
 function setup() {
     createCanvas(375, 812);
-    pantalla = 0;
+    pantalla = 2;
     /*userInput = createInput('');
     passwordInput = createInput('', 'password');
     userInput.position(66, 405);
@@ -51,12 +52,10 @@ function setup() {
     plato4 = new Plato(4, "Sandwich Vegetariano", "Pimentón,champiñones,tomate,maíz tierno y zanahoria", 11300, 0);
 
     loginScreen = new Login();
+    registroScreen = new Registro();
     arrayUsuario = [];
 }
 //platosArreglo = [];
-
-
-
 
 function draw() {
     background(0);
@@ -135,7 +134,6 @@ function draw() {
             text(plato4.precio, 176, 750);
             //textSize(16);
 
-
             /*
             switch (this.idSandwich) {
 
@@ -203,6 +201,7 @@ function draw() {
 
             textSize(15);
             text("Contraseña", 60, 456);
+            registroScreen.paint();
             break;
 
         case 3:
@@ -463,12 +462,27 @@ function draw() {
 }
 
 function keyPressed() {
-    if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && keyCode != RETURN && keyCode != TAB && keyCode != ESCAPE
-        && keyCode != OPTION && keyCode != UP_ARROW && keyCode != DOWN_ARROW && keyCode != LEFT_ARROW && keyCode != RIGHT_ARROW
-        && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20) {
-        loginScreen.writeTextInput(key);
-    } else if (keyCode == BACKSPACE) {
-        loginScreen.eraseTextInput();
+    switch (pantalla) {
+        case 0:
+            if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && keyCode != RETURN && keyCode != TAB && keyCode != ESCAPE
+                && keyCode != OPTION && keyCode != UP_ARROW && keyCode != DOWN_ARROW && keyCode != LEFT_ARROW && keyCode != RIGHT_ARROW
+                && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20) {
+                loginScreen.writeTextInput(key);
+            } else if (keyCode == BACKSPACE) {
+                loginScreen.eraseTextInput();
+            }
+            break;
+
+        case 2:
+            if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && keyCode != RETURN && keyCode != TAB && keyCode != ESCAPE
+                && keyCode != OPTION && keyCode != UP_ARROW && keyCode != DOWN_ARROW && keyCode != LEFT_ARROW && keyCode != RIGHT_ARROW
+                && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20) {
+                registroScreen.writeTextInput(key);
+            } else if (keyCode == BACKSPACE) {
+                registroScreen.eraseTextInput();
+            }
+
+            break;
     }
 }
 
@@ -479,6 +493,11 @@ function mousePressed() {
     if (pantalla == 0) {
         loginScreen.focusInputs(mouseX, mouseY);
     }
+
+    if (pantalla == 2) {
+        registroScreen.focusInputs(mouseX, mouseY);
+    }
+
     //BOTÓN IR A PERFIL
     if (mouseX >= 0 && mouseX <= 264 && mouseY >= 14 && mouseY <= 90 && pantalla == 3) {
         pantalla = 9;
