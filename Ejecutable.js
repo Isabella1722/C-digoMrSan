@@ -393,7 +393,68 @@ function draw() {
             if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
                 cursor(HAND);
             }
+
+            if (mouseX >= 64 && mouseX <= 303 && mouseY >= 201 && mouseY <= 376) {
+                cursor(HAND);
+            }
+            if (mouseX >= 69 && mouseX <= 305 && mouseY >= 478 && mouseY <= 657) {
+                cursor(HAND);
+            }
             break;
+
+
+        case 16:
+
+            //PANTALLA  PAGO EFECTIVO
+            image(efectivo, 0, 0);
+            if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
+                cursor(HAND);
+            }
+            if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734) {
+                cursor(HAND);
+            }
+            break;
+
+
+        case 17:
+
+            //PANTALLA   PAGO TARJETA
+            image(tarjeta, 0, 0);
+            if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
+                cursor(HAND);
+            }
+            if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734) {
+                cursor(HAND);
+            }
+            break;
+
+        case 18:
+
+            //PANTALLA  CONFIRMAR
+            image(confirmarDir, 0, 0);
+          
+          
+            if (mouseX >= 165 && mouseX <= 205 && mouseY >= 582 && mouseY <= 632) {
+                cursor(HAND);
+            }
+
+
+            break;
+            case 19:
+
+                //PANTALLA  FACTURA
+                image(factura, 0, 0);
+                if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93) {
+                    cursor(HAND);
+                }
+              
+    
+    
+                break;
+
+
+         
+
 
     }
 
@@ -597,7 +658,7 @@ function mousePressed() {
         //  console.log(plato1.cantidad);
         plato3.cantidad++;
     }
-    
+
     if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513 && pantalla == 6) {
         plato3.cantidad--;
     }
@@ -674,7 +735,46 @@ function mousePressed() {
     if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 15) {
         pantalla = 1;
     }
+    //BOTON EFECTIVO
+    if (mouseX >= 64 && mouseX <= 303 && mouseY >= 201 && mouseY <= 376 && pantalla == 15) {
+        pantalla = 16;
+    }
+    //BOTON TARJETA
+    if (mouseX >= 69 && mouseX <= 305 && mouseY >= 478 && mouseY <= 657 && pantalla == 15) {
+        pantalla = 17;
+    }
+    //DEVOLVER PAGO EFECTIVO
+    if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 16) {
+        pantalla = 15;
+    }
+    //DEVOLVER PAGO TARJETA
+    if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 17) {
+        pantalla = 15;
+    }
 
+    //BOTON CONTINUAR EFECTIVO
+    if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734 && pantalla == 16) {
+        pantalla = 18;
+    }
+    //BOTON CONTINUAR TARJETA
+    if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734 && pantalla == 17) {
+        pantalla = 18;
+    }
+    //BOTON CONTINUAR DIRECCION
+    if (mouseX >= 165 && mouseX <= 205 && mouseY >= 582 && mouseY <= 632 && pantalla == 18) {
+        pantalla=19;
+    }
+    //BOTON CONTINUAR DIRECCION
+    if (mouseX >= 165 && mouseX <= 205 && mouseY >= 582 && mouseY <= 632 && pantalla == 18) {
+        pantalla=19;
+    }
+    //BOTÓN CERRAR FACTURA
+    if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93 && pantalla == 19) {
+        pantalla=1;
+    }
+    
 }
+
+
 
 // alt shift f  para acomodar las lineas de código
