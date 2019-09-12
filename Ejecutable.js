@@ -7,6 +7,7 @@ let cantidad;
 let plato1, plato2, plato3, plato4;
 let arrayUsuario;
 
+
 function preload() {
     inicio = loadImage("data/inicio.jpg");
     acompa = loadImage("data/Acompa.jpg");
@@ -78,6 +79,8 @@ function draw() {
             fill(0);
             textSize(15);
             text("Contraseña", 60, 466);
+            var inputVal = document.getElementById('<%=userInput.Ejecutable%>').value;
+            console.log(inputVal);
             break;
 
 
