@@ -1,7 +1,8 @@
 class Input {
-    constructor(posX, posY, tipo) {
+    constructor(posX, posY, ancho) {
         this.posX = posX;
         this.posY = posY;
+        this.ancho = ancho;
         this.focus = false;
         this.text = "";
     }
@@ -13,7 +14,7 @@ class Input {
             stroke(0);
         }
         fill(255);
-        rect(this.posX, this.posY, 260, 20);
+        rect(this.posX, this.posY, this.ancho, 20);
     }
 
     displayText() {

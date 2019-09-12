@@ -7,8 +7,9 @@ let cantidad;
 let plato1, plato2, plato3, plato4;
 let loginScreen;
 let registroScreen;
+let efectivoScreen;
+let tarjetaScreen;
 let arrayUsuario;
-
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -37,7 +38,7 @@ function preload() {
 
 function setup() {
     createCanvas(375, 812);
-    pantalla = 2;
+    pantalla = 17;
     /*userInput = createInput('');
     passwordInput = createInput('', 'password');
     userInput.position(66, 405);
@@ -53,6 +54,8 @@ function setup() {
 
     loginScreen = new Login();
     registroScreen = new Registro();
+    efectivoScreen = new Efectivo();
+    tarjetaScreen = new Tarjeta();
     arrayUsuario = [];
 }
 //platosArreglo = [];
@@ -418,6 +421,8 @@ function draw() {
             if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734) {
                 cursor(HAND);
             }
+
+            efectivoScreen.paint();
             break;
 
 
@@ -431,6 +436,8 @@ function draw() {
             if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734) {
                 cursor(HAND);
             }
+
+            tarjetaScreen.paint();
             break;
 
         case 18:
@@ -481,7 +488,24 @@ function keyPressed() {
             } else if (keyCode == BACKSPACE) {
                 registroScreen.eraseTextInput();
             }
-
+            break;
+        case 16:
+            if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && keyCode != RETURN && keyCode != TAB && keyCode != ESCAPE
+                && keyCode != OPTION && keyCode != UP_ARROW && keyCode != DOWN_ARROW && keyCode != LEFT_ARROW && keyCode != RIGHT_ARROW
+                && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20) {
+                efectivoScreen.writeTextInput(key);
+            } else if (keyCode == BACKSPACE) {
+                efectivoScreen.eraseTextInput();
+            }
+            break;
+        case 17:
+            if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && keyCode != RETURN && keyCode != TAB && keyCode != ESCAPE
+                && keyCode != OPTION && keyCode != UP_ARROW && keyCode != DOWN_ARROW && keyCode != LEFT_ARROW && keyCode != RIGHT_ARROW
+                && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20) {
+                tarjetaScreen.writeTextInput(key);
+            } else if (keyCode == BACKSPACE) {
+                tarjetaScreen.eraseTextInput();
+            }
             break;
     }
 }
@@ -498,6 +522,14 @@ function mousePressed() {
         registroScreen.focusInputs(mouseX, mouseY);
     }
 
+    if (pantalla == 16) {
+        efectivoScreen.focusInputs(mouseX, mouseY);
+    }
+
+    if (pantalla == 17) {
+        tarjetaScreen.focusInputs(mouseX, mouseY);
+    }
+
     //BOTÓN IR A PERFIL
     if (mouseX >= 0 && mouseX <= 264 && mouseY >= 14 && mouseY <= 90 && pantalla == 3) {
         pantalla = 9;
@@ -511,7 +543,7 @@ function mousePressed() {
     //BOTÓN ENTRAR
     if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0) {
         pantalla = 1;
-      //  userInput.remove();
+        //  userInput.remove();
         //passwordInput.remove();
     }
 
