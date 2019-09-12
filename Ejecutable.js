@@ -5,6 +5,7 @@ let platosArreglo;
 let sandwichCriollo, sandwichCubano, sandwichItaliano, sandwichVegetariano;
 let cantidad;
 let plato1, plato2, plato3, plato4;
+let loginScreen;
 let arrayUsuario;
 
 
@@ -36,12 +37,12 @@ function preload() {
 function setup() {
     createCanvas(375, 812);
     pantalla = 0;
-    userInput = createInput('');
+    /*userInput = createInput('');
     passwordInput = createInput('', 'password');
     userInput.position(66, 405);
     userInput.size(255, 15);
     passwordInput.position(66, 480);
-    passwordInput.size(255, 15);
+    passwordInput.size(255, 15);*/
     cantidad = 0;
 
     plato1 = new Plato(1, "Sandwich Criollo", "Carne de res desmechada,hogo, maduro y maíz tierno", 13400, 0);
@@ -49,6 +50,7 @@ function setup() {
     plato3 = new Plato(3, "Sandwich Italiano", "Roast beff,jamón,salami,queso parmesano,pasta,tomate", 13400, 0);
     plato4 = new Plato(4, "Sandwich Vegetariano", "Pimentón,champiñones,tomate,maíz tierno y zanahoria", 11300, 0);
 
+    loginScreen = new Login();
     arrayUsuario = [];
 }
 //platosArreglo = [];
@@ -72,15 +74,16 @@ function draw() {
                 cursor(HAND);
             }
 
+            noStroke();
             fill(0);
             textSize(15);
             text("Usuario", 63, 385);
 
+            noStroke();
             fill(0);
             textSize(15);
             text("Contraseña", 60, 466);
-            var inputVal = document.getElementById('<%=userInput.Ejecutable%>').value;
-            console.log(inputVal);
+            loginScreen.paint();
             break;
 
 
@@ -435,38 +438,47 @@ function draw() {
 
             //PANTALLA  CONFIRMAR
             image(confirmarDir, 0, 0);
-          
-          
+
+
             if (mouseX >= 165 && mouseX <= 205 && mouseY >= 582 && mouseY <= 632) {
                 cursor(HAND);
             }
 
 
             break;
-            case 19:
+        case 19:
 
-                //PANTALLA  FACTURA
-                image(factura, 0, 0);
-                if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93) {
-                    cursor(HAND);
-                }
-              
-    
-    
-                break;
+            //PANTALLA  FACTURA
+            image(factura, 0, 0);
+            if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93) {
+                cursor(HAND);
+            }
 
 
-         
 
+            break;
 
     }
 
+}
+
+function keyPressed() {
+    if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && keyCode != RETURN && keyCode != TAB && keyCode != ESCAPE
+        && keyCode != OPTION && keyCode != UP_ARROW && keyCode != DOWN_ARROW && keyCode != LEFT_ARROW && keyCode != RIGHT_ARROW
+        && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20) {
+        loginScreen.writeTextInput(key);
+    } else if (keyCode == BACKSPACE) {
+        loginScreen.eraseTextInput();
+    }
 }
 
 function mousePressed() {
     print(" X" + mouseX + " Y" + mouseY);
     print("P " + pantalla);
 
+    if (pantalla == 0) {
+        loginScreen.focusInputs(mouseX, mouseY);
+    }
     //BOTÓN IR A PERFIL
     if (mouseX >= 0 && mouseX <= 264 && mouseY >= 14 && mouseY <= 90 && pantalla == 3) {
         pantalla = 9;
@@ -765,19 +777,17 @@ function mousePressed() {
     }
     //BOTON CONTINUAR DIRECCION
     if (mouseX >= 165 && mouseX <= 205 && mouseY >= 582 && mouseY <= 632 && pantalla == 18) {
-        pantalla=19;
+        pantalla = 19;
     }
     //BOTON CONTINUAR DIRECCION
     if (mouseX >= 165 && mouseX <= 205 && mouseY >= 582 && mouseY <= 632 && pantalla == 18) {
-        pantalla=19;
+        pantalla = 19;
     }
     //BOTÓN CERRAR FACTURA
     if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93 && pantalla == 19) {
-        pantalla=1;
+        pantalla = 1;
     }
-    
+
 }
-
-
 
 // alt shift f  para acomodar las lineas de código
