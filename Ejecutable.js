@@ -15,7 +15,7 @@ let direccionScreen;
 let arrayUsuario;
 let cantidadA;
 let usuarios = [];
-
+let precioTAdicionesCompra;
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -53,6 +53,7 @@ function setup() {
     passwordInput.size(255, 15);*/
     cantidad = 0;
     cantidadA=0;
+    precioTAdicionesCompra = 0;
     plato1 = new Plato(1, "Sandwich Criollo", "Carne de res desmechada,hogo, maduro y maíz tierno", 13400, 0);
     plato2 = new Plato(2, "Sandwich Cubano", "Jamón de cerdo,queso mozzarella, lechuga,tomate", 9200, 0);
     plato3 = new Plato(3, "Sandwich Italiano", "Roast beff,jamón,salami,queso parmesano,pasta,tomate", 13400, 0);
@@ -160,48 +161,7 @@ function draw() {
             text(plato4.precio, 176, 750);
             //textSize(16);
 
-            /*
-            switch (this.idSandwich) {
-
-                case 1:
-                        this.nombre = "Sandwich Criollo";
-                        this.precio = 13400;
-                        textAlign(CENTER);
-            text(this.nombre,232,362);
-            textSize(16);
-            text(this.precio,229,389);
-            textSize(16);
-    
-                break;
-    
-    
-                case 2:
-                        this.nombre = "Sandwich Cubano";
-                        this.precio = 9200;
-    
-                break;
-    
-    
-    
-                case 3:
-    
-                        this.nombre = "Sandwich Italiano";
-                        this.precio = 13400;
-                break;
-    
-    
-    
-                case 4:
-                        this.nombre = "Sandwich Vegetariano";
-                        this.precio = 11300;
-    
-    
-                break;
-    
-    
-    
-            }
-*/
+          
             break;
 
         case 2:
@@ -253,6 +213,9 @@ function draw() {
                 cursor(HAND);
             }
 
+            
+
+
             fill(0);
             textSize(16);
             textAlign(CENTER);
@@ -270,6 +233,19 @@ function draw() {
             if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692) {
                 cursor(HAND);
             }
+            //PINTAR EL PRECIO TOTAL
+            fill(0);
+            textSize(16);
+            textAlign(CENTER);
+            text("Precio Total:", 93, 405);
+            //CALCULO DE PRECIO TOTAL
+            plato1.calcularPrecioTotal();
+            
+            fill(0);
+            textSize(16);
+            textAlign(CENTER);
+            text(plato1.precioT, 170, 405);
+
             break;
 
         case 5:
@@ -295,6 +271,19 @@ function draw() {
             if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692) {
                 cursor(HAND);
             }
+
+             //PINTAR EL PRECIO TOTAL
+             fill(0);
+             textSize(16);
+             textAlign(CENTER);
+             text("Precio Total:", 93, 405);
+             //CALCULO DE PRECIO TOTAL
+             plato2.calcularPrecioTotal();
+             
+             fill(0);
+             textSize(16);
+             textAlign(CENTER);
+             text(plato2.precioT, 170, 405);
             break;
 
         case 6:
@@ -322,6 +311,22 @@ function draw() {
             if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692) {
                 cursor(HAND);
             }
+             //PINTAR EL PRECIO TOTAL
+             fill(0);
+             textSize(16);
+             textAlign(CENTER);
+             text("Precio Total:", 93, 405);
+             //CALCULO DE PRECIO TOTAL
+             plato3.calcularPrecioTotal();
+             
+             fill(0);
+             textSize(16);
+             textAlign(CENTER);
+             text(plato3.precioT, 170, 405);
+
+
+
+
             break;
 
         case 7:
@@ -348,11 +353,25 @@ function draw() {
             if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692) {
                 cursor(HAND);
             }
+             //PINTAR EL PRECIO TOTAL
+             fill(0);
+             textSize(16);
+             textAlign(CENTER);
+             text("Precio Total:", 93, 405);
+             //CALCULO DE PRECIO TOTAL
+             plato4.calcularPrecioTotal();
+             
+             fill(0);
+             textSize(16);
+             textAlign(CENTER);
+             text(plato4.precioT, 170, 405);
             break;
 
         case 8:
 
             //PANTALLA FACTURA
+
+
             break;
 
         case 9:
@@ -420,7 +439,14 @@ function draw() {
 
             fill(255);
             textSize(22);
-            text(adicion1.cantidad, 268, 340); 
+            text(adicion1.cantidadA, 268, 340); 
+                //CALCULO DE PRECIO TOTAL
+                adicion1.calcularPrecioTotalA();
+             
+                fill(0);
+                textSize(18);
+                textAlign(CENTER);
+                text(adicion1.precioTA, 170, 340);
 
             if (mouseX >= 216 && mouseX <= 241 && mouseY >= 328 && mouseY <= 339 ) {
                 cursor(HAND);
@@ -434,11 +460,18 @@ function draw() {
 
             fill(255);
             textSize(22);
-            text(adicion2.cantidad, 268, 400); 
+            text(adicion2.cantidadA, 268, 400); 
             //RESTA
             if (mouseX >= 218 && mouseX <= 240 && mouseY >= 388 && mouseY <= 395 ) {
                 cursor(HAND);
             }
+            //CALCULO DE PRECIO TOTAL
+            adicion2.calcularPrecioTotalA();
+             
+            fill(0);
+            textSize(18);
+            textAlign(CENTER);
+            text(adicion2.precioTA, 170, 400);
 
             //BOTONES TOMATE 
             //SUMA
@@ -448,11 +481,18 @@ function draw() {
 
             fill(255);
             textSize(22);
-            text(adicion3.cantidad, 268, 459); 
+            text(adicion3.cantidadA, 268, 459); 
             //RESTA
             if (mouseX >= 217 && mouseX <= 241 && mouseY >= 447 && mouseY <= 459 ) {
                 cursor(HAND);
             }
+             //CALCULO DE PRECIO TOTAL
+             adicion3.calcularPrecioTotalA();
+             
+             fill(0);
+             textSize(18);
+             textAlign(CENTER);
+             text(adicion3.precioTA, 170, 460);
 
             //BOTONES QUESO 
             //SUMA
@@ -462,11 +502,18 @@ function draw() {
 
             fill(255);
             textSize(22);
-            text(adicion4.cantidad, 268, 518); 
+            text(adicion4.cantidadA, 268, 518); 
             //RESTA
             if (mouseX >= 216 && mouseX <= 240 && mouseY >= 501 && mouseY <= 515 ) {
                 cursor(HAND);
             }
+             //CALCULO DE PRECIO TOTAL
+             adicion4.calcularPrecioTotalA();
+             
+             fill(0);
+             textSize(18);
+             textAlign(CENTER);
+             text(adicion4.precioTA, 170, 520);
 
              //BOTONES SALSAS 
             //SUMA
@@ -476,11 +523,18 @@ function draw() {
 
             fill(255);
             textSize(22);
-            text(adicion5.cantidad, 268, 578); 
+            text(adicion5.cantidadA, 268, 578); 
             //RESTA
             if (mouseX >= 216 && mouseX <= 242 && mouseY >= 563 && mouseY <= 573 ) {
                 cursor(HAND);
             }
+              //CALCULO DE PRECIO TOTAL
+              adicion5.calcularPrecioTotalA();
+             
+              fill(0);
+              textSize(18);
+              textAlign(CENTER);
+              text(adicion5.precioTA, 170, 580);
 
             
              //BOTONES PROTEÍNA 
@@ -491,7 +545,7 @@ function draw() {
 
             fill(255);
             textSize(22);
-            text(adicion6.cantidad, 268, 635); 
+            text(adicion6.cantidadA, 268, 635); 
             //RESTA
             if (mouseX >= 216 && mouseX <= 240 && mouseY >= 625 && mouseY <= 633 ) {
                 cursor(HAND);
@@ -500,6 +554,25 @@ function draw() {
             if (mouseX >= 129 && mouseX <= 249 && mouseY >= 732 && mouseY <= 768 ) {
                 cursor(HAND);
             }
+             //CALCULO DE PRECIO TOTAL
+             adicion6.calcularPrecioTotalA();
+             
+             fill(0);
+             textSize(18);
+             textAlign(CENTER);
+             text(adicion6.precioTA, 170, 640);
+
+         
+
+             precioTAdicionesCompra=(adicion1.precioTA+adicion2.precioTA+adicion3.precioTA+adicion4.precioTA
+                +adicion5.precioTA+adicion6.precioTA)
+
+                
+             fill(0);
+             textSize(18);
+             textAlign(CENTER);
+             text(precioTAdicionesCompra, 175, 701);
+
             break;
 
         case 14:
@@ -978,62 +1051,62 @@ function mousePressed() {
     //INCREMENTAR CANTIDAD DE ADICIONES PAN INTEGRAL
     if (mouseX >= 290 && mouseX <= 313 && mouseY >= 320 && mouseY <= 345 && pantalla == 13) {
 
-        adicion1.cantidad++;
+        adicion1.cantidadA++;
      
     }
 
     if (mouseX >= 216 && mouseX <= 241 && mouseY >= 328 && mouseY <= 339 && pantalla == 13) {
-        adicion1.cantidad--;
+        adicion1.cantidadA--;
     }
 
-    if (adicion1.cantidad < 0) {
-        adicion1.cantidad = 0;
+    if (adicion1.cantidadA < 0) {
+        adicion1.cantidadA = 0;
     }
 
     //INCREMENTAR CANTIDAD DE ADICIONES PAN COMUN
     if (mouseX >= 291 && mouseX <= 314 && mouseY >= 382 && mouseY <= 405 && pantalla == 13) {
 
-        adicion2.cantidad++;
+        adicion2.cantidadA++;
      
     }
 
     if (mouseX >= 218 && mouseX <= 240 && mouseY >= 388 && mouseY <= 395 && pantalla == 13) {
-        adicion2.cantidad--;
+        adicion2.cantidadA--;
     }
 
-    if (adicion2.cantidad < 0) {
-        adicion2.cantidad = 0;
+    if (adicion2.cantidadA < 0) {
+        adicion2.cantidadA = 0;
     }
 
     //INCREMENTAR CANTIDAD DE ADICIONES TOMATE
     if (mouseX >= 291 && mouseX <= 316 && mouseY >= 441 && mouseY <= 464 && pantalla == 13) {
 
-        adicion3.cantidad++;
+        adicion3.cantidadA++;
      
     }
 
     if (mouseX >= 217 && mouseX <= 241 && mouseY >= 447 && mouseY <= 459 && pantalla == 13) {
-        adicion3.cantidad--;
+        adicion3.cantidadA--;
     }
 
-    if (adicion3.cantidad < 0) {
-        adicion3.cantidad = 0;
+    if (adicion3.cantidadA < 0) {
+        adicion3.cantidadA = 0;
 
 
     }
  //INCREMENTAR CANTIDAD DE ADICIONES QUESO
  if (mouseX >= 290 && mouseX <= 314 && mouseY >= 502 && mouseY <= 523 && pantalla == 13) {
 
-    adicion4.cantidad++;
+    adicion4.cantidadA++;
  
 }
 
 if (mouseX >= 216 && mouseX <= 240 && mouseY >= 501 && mouseY <= 515 && pantalla == 13) {
-    adicion4.cantidad--;
+    adicion4.cantidadA--;
 }
 
-if (adicion4.cantidad < 0) {
-    adicion4.cantidad = 0;
+if (adicion4.cantidadA < 0) {
+    adicion4.cantidadA = 0;
 
 
 }
@@ -1041,31 +1114,31 @@ if (adicion4.cantidad < 0) {
      //INCREMENTAR CANTIDAD DE ADICIONES SALSAS
      if (mouseX >= 292 && mouseX <= 316 && mouseY >= 561 && mouseY <= 582 && pantalla == 13) {
 
-        adicion5.cantidad++;
+        adicion5.cantidadA++;
      
     }
 
     if (mouseX >= 216 && mouseX <= 242 && mouseY >= 563 && mouseY <= 573 && pantalla == 13) {
-        adicion5.cantidad--;
+        adicion5.cantidadA--;
     }
 
-    if (adicion5.cantidad < 0) {
-        adicion5.cantidad = 0;
+    if (adicion5.cantidadA < 0) {
+        adicion5.cantidadA = 0;
     }
 
      //INCREMENTAR CANTIDAD DE ADICIONES PROTEÍNAS
      if (mouseX >= 291 && mouseX <= 314 && mouseY >= 619 && mouseY <= 640 && pantalla == 13) {
 
-        adicion6.cantidad++;
+        adicion6.cantidadA++;
      
     }
 
     if (mouseX >= 216 && mouseX <= 240 && mouseY >= 625 && mouseY <= 633 && pantalla == 13) {
-        adicion6.cantidad--;
+        adicion6.cantidadA--;
     }
 
-    if (adicion6.cantidad < 0) {
-        adicion6.cantidad = 0;
+    if (adicion6.cantidadA < 0) {
+        adicion6.cantidadA = 0;
     }
     
 
