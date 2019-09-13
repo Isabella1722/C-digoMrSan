@@ -22,7 +22,9 @@ let evaluarMarco2;
 let totalTodo;
 let tipoPlato;
 let nombrePlato;
-
+let precioPlato;
+let cantPlato;
+let cambio;
 function preload() {
     inicio = loadImage("data/inicio.jpg");
     acompa = loadImage("data/Acompa.jpg");
@@ -52,7 +54,7 @@ function preload() {
 
 function setup() {
     createCanvas(375, 812);
-    pantalla = 18;
+    pantalla = 1;
     /*userInput = createInput('');
     passwordInput = createInput('', 'password');
     userInput.position(66, 405);
@@ -94,6 +96,7 @@ function setup() {
 
     evaluarMarco1 = false;
     evaluarMarco2 = false;
+    cambio=0;
 
 }
 //platosArreglo = [];
@@ -220,6 +223,8 @@ function draw() {
             //PANTALLA SANDWICH CRIOLLO
             tipoPlato = plato1.idSandwich;
             nombrePlato = plato1.nombre;
+            precioPlato=plato1.precio;
+            cantPlato=plato1.cantidad;
             image(sCriollo, 0, 0);
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
@@ -263,6 +268,8 @@ function draw() {
             //PANTALLA SANDWICH CUBANO
             tipoPlato = plato2.idSandwich;
             nombrePlato = plato2.nombre;
+            precioPlato=plato2.precio;
+            cantPlato=plato2.cantidad;
             image(sQubano, 0, 0);
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
@@ -303,6 +310,8 @@ function draw() {
             //PANTALLA SANDWICH CUBANO
             tipoPlato = plato3.idSandwich;
             nombrePlato = plato3.nombre;
+            precioPlato=plato3.precio;
+            cantPlato=plato3.cantidad;
             image(sItaliano, 0, 0);
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
@@ -347,6 +356,8 @@ function draw() {
             //PANTALLA SANDWICH VEGETARIANO
             tipoPlato = plato4.idSandwich;
             nombrePlato = plato4.nombre;
+            precioPlato=plato4.precio;
+            cantPlato=plato4.cantidad;
             image(sVegetariano, 0, 0);
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
@@ -640,6 +651,16 @@ function draw() {
             textSize(18);
             textAlign(CENTER);
             text(totalTodo, 170, 424);
+
+
+            cambio= efectivoScreen.arrayInputs[0].getText()-totalTodo;
+           
+            if (cambio>=0){
+                fill(0);
+                textSize(18);
+                textAlign(CENTER);
+                text(cambio, 170, 615);
+            }
             break;
 
         case 17:
@@ -668,27 +689,6 @@ function draw() {
                 image(marco, 200, 585, 96, 66);
             }
 
-
-
-            //VISA
-            /* if (mouseX >= 83 && mouseX <= 162 && mouseY >= 590 && mouseY <= 649) {
-                 evaluarMarco1=true;
-                 if (evaluarMarco1==true){
-                     
- 
-                 }
-           
-             }
-             //MASTERCARD
-             if (mouseX >= 208 && mouseX <= 292 && mouseY >= 595 && mouseY <= 647) {
-                 evaluarMarco2=true;
-                 if (evaluarMarco2==true){
-                     
-                  
-                
- 
-                 }
-             }*/
             break;
 
         case 18:
@@ -712,12 +712,30 @@ function draw() {
             fill(0);
             textSize(18);
             textAlign(LEFT);
-            text(direccionScreen.arrayInputs[0].getText() + " " + direccionScreen.arrayInputs[1].getText() + " " + direccionScreen.arrayLong[0].getText(), 130, 154)
+            text("Cra: "+direccionScreen.arrayInputs[0].getText() + " " + direccionScreen.arrayInputs[1].getText() + " " + direccionScreen.arrayLong[0].getText(), 130, 154)
 
             fill(0);
             textSize(18);
-            textAlign(CENTER);
+            textAlign(LEFT);
             text(totalTodo, 116, 625);
+
+
+            fill(0);
+            textSize(18);
+            textAlign(LEFT);
+            text(cambio, 130, 706);
+
+            fill(0);
+            textSize(18);
+            textAlign(LEFT);
+            text(efectivoScreen.arrayInputs[0].getText(), 162, 666);
+
+            text(tipoPlato,65,225);
+
+            text(precioPlato,138,225);
+            text(cantPlato,280,225);
+            
+         
             break;
     }
 }
@@ -1141,6 +1159,8 @@ function mousePressed() {
                 pantalla = 1;
             }
             break;
+
+            
         default:
             break;
     }
