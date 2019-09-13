@@ -444,7 +444,6 @@ function draw() {
 
             fill(255);
             textSize(22);
-<<<<<<< HEAD
             text(adicion1.cantidadA, 268, 340); 
                 //CALCULO DE PRECIO TOTAL
                 adicion1.calcularPrecioTotalA();
@@ -453,9 +452,7 @@ function draw() {
                 textSize(18);
                 textAlign(CENTER);
                 text(adicion1.precioTA, 170, 340);
-=======
             text(adicion1.cantidad, 268, 340);
->>>>>>> 7d4efbd48eb09e89e31c5100b0169d7947232eef
 
             if (mouseX >= 216 && mouseX <= 241 && mouseY >= 328 && mouseY <= 339) {
                 cursor(HAND);
@@ -469,11 +466,8 @@ function draw() {
 
             fill(255);
             textSize(22);
-<<<<<<< HEAD
             text(adicion2.cantidadA, 268, 400); 
-=======
             text(adicion2.cantidad, 268, 400);
->>>>>>> 7d4efbd48eb09e89e31c5100b0169d7947232eef
             //RESTA
             if (mouseX >= 218 && mouseX <= 240 && mouseY >= 388 && mouseY <= 395) {
                 cursor(HAND);
@@ -494,11 +488,7 @@ function draw() {
 
             fill(255);
             textSize(22);
-<<<<<<< HEAD
             text(adicion3.cantidadA, 268, 459); 
-=======
-            text(adicion3.cantidad, 268, 459);
->>>>>>> 7d4efbd48eb09e89e31c5100b0169d7947232eef
             //RESTA
             if (mouseX >= 217 && mouseX <= 241 && mouseY >= 447 && mouseY <= 459) {
                 cursor(HAND);
@@ -519,11 +509,7 @@ function draw() {
 
             fill(255);
             textSize(22);
-<<<<<<< HEAD
             text(adicion4.cantidadA, 268, 518); 
-=======
-            text(adicion4.cantidad, 268, 518);
->>>>>>> 7d4efbd48eb09e89e31c5100b0169d7947232eef
             //RESTA
             if (mouseX >= 216 && mouseX <= 240 && mouseY >= 501 && mouseY <= 515) {
                 cursor(HAND);
@@ -544,11 +530,7 @@ function draw() {
 
             fill(255);
             textSize(22);
-<<<<<<< HEAD
             text(adicion5.cantidadA, 268, 578); 
-=======
-            text(adicion5.cantidad, 268, 578);
->>>>>>> 7d4efbd48eb09e89e31c5100b0169d7947232eef
             //RESTA
             if (mouseX >= 216 && mouseX <= 242 && mouseY >= 563 && mouseY <= 573) {
                 cursor(HAND);
@@ -570,11 +552,8 @@ function draw() {
 
             fill(255);
             textSize(22);
-<<<<<<< HEAD
             text(adicion6.cantidadA, 268, 635); 
-=======
             text(adicion6.cantidad, 268, 635);
->>>>>>> 7d4efbd48eb09e89e31c5100b0169d7947232eef
             //RESTA
             if (mouseX >= 216 && mouseX <= 240 && mouseY >= 625 && mouseY <= 633) {
                 cursor(HAND);
@@ -757,7 +736,6 @@ function mousePressed() {
         direccionScreen.focusInputs(mouseX, mouseY);
     }
 
-<<<<<<< HEAD
     //BOTÓN IR A PERFIL
     if (mouseX >= 0 && mouseX <= 264 && mouseY >= 14 && mouseY <= 90 && pantalla == 3) {
         pantalla = 9;
@@ -1172,86 +1150,6 @@ if (adicion4.cantidadA < 0) {
     }
     
 
-=======
-    switch (pantalla) {
-        case 0:
-            //BOTÓN ENTRAR
-            if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589) {
-                pantalla = 1;
-            }
-            // BOTÓN ENTRAR REGISTRO
-            if (mouseX >= 124 && mouseX <= 246 && mouseY >= 623 && mouseY <= 646) {
-                pantalla = 2;
-            }
-            break;
-        case 1:
-            //BOTÓN SANDWICH ITALIANO
-            if (mouseX >= 34 && mouseX <= 343 && mouseY >= 570 && mouseY <= 652) {
-                pantalla = 6;
-            }
-            //BOTÓN SANDWICH CRIOLLO
-            if (mouseX >= 34 && mouseX <= 343 && mouseY >= 336 && mouseY <= 417) {
-                pantalla = 4;
-            }
-            //BOTÓN SANDWICH CUBANO
-            if (mouseX >= 34 && mouseX <= 343 && mouseY >= 456 && mouseY <= 536) {
-                pantalla = 5;
-            }
-            //BOTÓN SANDWICH VEGETARIANO
-            if (mouseX >= 35 && mouseX <= 345 && mouseY >= 689 && mouseY <= 765) {
-                pantalla = 7;
-            }
-            //BOTÓN MENÚ PERFIL
-            if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66) {
-                pantalla = 3;
-            }
-            break;
-        case 2:
-            // BOTÓN REGISTRO VOLVER 
-            if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66) {
-                pantalla = 0;
-            }
-            // BOTÓN REGISTRO
-            if (mouseX >= 159 && mouseX <= 214 && mouseY >= 551 && mouseY <= 608) {
-                pantalla = 1;
-                let user = new Usuario(registroScreen.arrayInputs[0].string, registroScreen.arrayInputs[1].string, registroScreen.arrayInputs[2].string);
-                usuarios.push(user);
-                localStorage.setItem('usuarios', JSON.stringify(usuarios));
-                registroScreen.arrayInputs[0].string = '';
-                registroScreen.arrayInputs[1].string = '';
-                registroScreen.arrayInputs[2].string = '';
-                localStorage.clear();
-                console.log(usuarios.length);
-            }
-            break;
-        case 3:
-            //BOTÓN FACTURA
-            if (mouseX >= 0 && mouseX <= 264 && mouseY >= 14 && mouseY <= 90) {
-                pantalla = 9;
-            }
-            //DEVOLVER MENÚ
-            if (mouseX >= 265) {
-                pantalla = 1;
-            }
-            //BOTÓN IR AL HISTORIAL DE PEDIDO
-            if (mouseX >= 0 && mouseX <= 266 && mouseY >= 96 && mouseY <= 162) {
-                pantalla = 10;
-            }
-            //BOTÓN CERRAR SESIÓN
-            if (mouseX >= 2 && mouseX <= 257 && mouseY >= 196 && mouseY <= 261) {
-                pantalla = 0;
-            }
-            break;
-        case 4:
-            //BOTÓN DEVOLVER SANDWICH CRIOLLO
-            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
-                pantalla = 1;
-                plato1.cantidad = 0;
-                plato2.cantidad = 0;
-                plato3.cantidad = 0;
-                plato4.cantidad = 0;
-            }
->>>>>>> 7d4efbd48eb09e89e31c5100b0169d7947232eef
 
             //INCREMENTAR CANTIDAD DE SANDWICH CRIOLLO
             if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532) {
@@ -1268,246 +1166,6 @@ if (adicion4.cantidadA < 0) {
             if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692) {
                 pantalla = 11;
             }
-            break;
-        case 5:
-            //BOTÓN DEVOLVER SANDWICH CUBANO
-            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
-                pantalla = 1;
-                plato1.cantidad = 0;
-                plato2.cantidad = 0;
-                plato3.cantidad = 0;
-                plato4.cantidad = 0;
-            }
-            //INCREMENTAR CANTIDAD DE SANDWICH CUBANO
-            if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532) {
-                plato2.cantidad++;
-            }
-            //DISMINUIR CANTIDAD DE SANDWICH CUBANO
-            if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513) {
-                plato2.cantidad--;
-            }
-            if (plato2.cantidad < 0) {
-                plato2.cantidad = 0;
-            }
-            //BOTÓN COMPRAR SANDWICH CUBANO
-            if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692) {
-                pantalla = 11;
-            }
-            break;
-        case 6:
-            //BOTÓN DEVOLVER SANDWICH ITALIANO
-            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
-                pantalla = 1;
-                plato1.cantidad = 0;
-                plato2.cantidad = 0;
-                plato3.cantidad = 0;
-                plato4.cantidad = 0;
-            }
-            //INCREMENTAR CANTIDAD DE SANDWICH ITALIANO
-            if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532) {
-                plato3.cantidad++;
-            }
-            //DISMINUIR CANTIDAD DE SANDWICH ITALIANO
-            if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513) {
-                plato3.cantidad--;
-            }
-            if (plato3.cantidad < 0) {
-                plato3.cantidad = 0;
-            }
-            //BOTÓN COMPRAR SANDWICH ITALIANO
-            if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692) {
-                pantalla = 11;
-            }
-            break;
-        case 7:
-            //BOTÓN DEVOLVER SANDWICH VEGETARIANO
-            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
-                pantalla = 1;
-                plato1.cantidad = 0;
-                plato2.cantidad = 0;
-                plato3.cantidad = 0;
-                plato4.cantidad = 0;
-            }
-            //INCREMENTAR CANTIDAD DE SANDWICH VEGETARIANO
-            if (mouseX >= 230 && mouseX <= 271 && mouseY >= 485 && mouseY <= 532) {
-                plato4.cantidad++;
-            }
-            //DISMINUIR CANTIDAD DE SANDWICH VEGETARIANO
-            if (mouseX >= 103 && mouseX <= 145 && mouseY >= 501 && mouseY <= 513) {
-                plato4.cantidad--;
-            }
-            if (plato4.cantidad < 0) {
-                plato4.cantidad = 0;
-            }
-            //BOTÓN COMPRAR SANDWICH VEGETARIANO
-            if (mouseX >= 147 && mouseX <= 226 && mouseY >= 631 && mouseY <= 692) {
-                pantalla = 11;
-            }
-            break;
-        case 8:
-            break;
-        case 9:
-            //BOTÓN DEVOLVER CERRAR SESIÓN
-            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
-                pantalla = 1;
-            }
-            //BOTÓN CERRAR DEFINITIVAMENTE SESIÓN
-            if (mouseX >= 161 && mouseX <= 224 && mouseY >= 533 && mouseY <= 589) {
-                pantalla = 0;
-            }
-            break;
-        case 10:
-            //BOTÓN DEVOLVER HISTORIAL DE PEDIDO
-            if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
-                pantalla = 1;
-            }
-            break;
-        case 11:
-            //BOTÓN SÍ ADICIONES 
-            if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472) {
-                pantalla = 13;
-            }
-
-            //BOTÓN NO  ADICIONES
-            if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476) {
-                pantalla = 15;
-            }
-            break;
-        case 12:
-            break;
-        case 13:
-            //BOTÓN DEVOLVER ADICIONES
-            if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
-                pantalla = 1;
-            }
-            //INCREMENTAR CANTIDAD DE ADICIONES PAN INTEGRAL
-            if (mouseX >= 290 && mouseX <= 313 && mouseY >= 320 && mouseY <= 345) {
-                adicion1.cantidad++;
-            }
-            //DISMINUIR CANTIDAD DE ADICIONES DE PAN INTEGRAL
-            if (mouseX >= 216 && mouseX <= 241 && mouseY >= 328 && mouseY <= 339) {
-                adicion1.cantidad--;
-            }
-            if (adicion1.cantidad < 0) {
-                adicion1.cantidad = 0;
-            }
-            //INCREMENTAR CANTIDAD DE ADICIONES PAN COMUN
-            if (mouseX >= 291 && mouseX <= 314 && mouseY >= 382 && mouseY <= 405) {
-                adicion2.cantidad++;
-            }
-            //DISMINUIR CANTIDAD DE ADICIONES PAN COMUN
-            if (mouseX >= 218 && mouseX <= 240 && mouseY >= 388 && mouseY <= 395) {
-                adicion2.cantidad--;
-            }
-            if (adicion2.cantidad < 0) {
-                adicion2.cantidad = 0;
-            }
-            //INCREMENTAR CANTIDAD DE ADICIONES TOMATE
-            if (mouseX >= 291 && mouseX <= 316 && mouseY >= 441 && mouseY <= 464) {
-                adicion3.cantidad++;
-            }
-            //DISMINUIR CANTIDAD DE ADICIONES TOMATE
-            if (mouseX >= 217 && mouseX <= 241 && mouseY >= 447 && mouseY <= 459) {
-                adicion3.cantidad--;
-            }
-            if (adicion3.cantidad < 0) {
-                adicion3.cantidad = 0;
-            }
-            //INCREMENTAR CANTIDAD DE ADICIONES QUESO
-            if (mouseX >= 290 && mouseX <= 314 && mouseY >= 502 && mouseY <= 523) {
-                adicion4.cantidad++;
-            }
-            //DISMINUIR CANTIDAD DE ADICIONES QUESO
-            if (mouseX >= 216 && mouseX <= 240 && mouseY >= 501 && mouseY <= 515) {
-                adicion4.cantidad--;
-            }
-            if (adicion4.cantidad < 0) {
-                adicion4.cantidad = 0;
-            }
-            //INCREMENTAR CANTIDAD DE ADICIONES SALSAS
-            if (mouseX >= 292 && mouseX <= 316 && mouseY >= 561 && mouseY <= 582) {
-                adicion5.cantidad++;
-            }
-            //DISMINUIR CANTIDAD DE ADICIONES SALSAS
-            if (mouseX >= 216 && mouseX <= 242 && mouseY >= 563 && mouseY <= 573) {
-                adicion5.cantidad--;
-            }
-            if (adicion5.cantidad < 0) {
-                adicion5.cantidad = 0;
-            }
-            //INCREMENTAR CANTIDAD DE ADICIONES PROTEÍNAS
-            if (mouseX >= 291 && mouseX <= 314 && mouseY >= 619 && mouseY <= 640) {
-                adicion6.cantidad++;
-            }
-            //DISMINUIR CANTIDAD DE ADICIONES PROTEÍNAS
-            if (mouseX >= 216 && mouseX <= 240 && mouseY >= 625 && mouseY <= 633) {
-                adicion6.cantidad--;
-            }
-            if (adicion6.cantidad < 0) {
-                adicion6.cantidad = 0;
-            }
-            //BOTÓN CONTINUAR ADICIONES
-            if (mouseX >= 129 && mouseX <= 249 && mouseY >= 732 && mouseY <= 768) {
-                pantalla = 15;
-            }
-            break;
-        case 14:
-            break;
-        case 15:
-            //DEVOLVER PAGO
-            if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
-                pantalla = 1;
-            }
-            //BOTÓN EFECTIVO
-            if (mouseX >= 64 && mouseX <= 303 && mouseY >= 201 && mouseY <= 376) {
-                pantalla = 16;
-            }
-            //BOTÓN TARJETA
-            if (mouseX >= 69 && mouseX <= 305 && mouseY >= 478 && mouseY <= 657) {
-                pantalla = 17;
-            }
-            break;
-        case 16:
-            //DEVOLVER PAGO EFECTIVO
-            if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
-                pantalla = 15;
-            }
-            //BOTON CONTINUAR EFECTIVO
-            if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734) {
-                pantalla = 18;
-            }
-            break;
-        case 17:
-            //DEVOLVER PAGO TARJETA
-            if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
-                pantalla = 15;
-            }
-            //BOTÓN CONTINUAR TARJETA
-            if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734) {
-                pantalla = 18;
-            }
-            break;
-        case 18:
-            //BOTON CONTINUAR DIRECCION
-            if (mouseX >= 165 && mouseX <= 205 && mouseY >= 582 && mouseY <= 632) {
-                pantalla = 19;
-            }
-            //BOTON CONTINUAR DIRECCION
-            if (mouseX >= 165 && mouseX <= 205 && mouseY >= 582 && mouseY <= 632) {
-                pantalla = 19;
-            }
-            break;
-        case 19:
-            //BOTÓN CERRAR FACTURA
-            if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93) {
-                pantalla = 1;
-            }
-            break;
-        default:
-            break;
-    }
 }
-
-
 
 // alt shift f  para acomodar las lineas de código
