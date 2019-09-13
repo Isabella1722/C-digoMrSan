@@ -494,6 +494,9 @@ function draw() {
                 cursor(HAND);
             }
 
+            if (mouseX >= 129 && mouseX <= 249 && mouseY >= 732 && mouseY <= 768 ) {
+                cursor(HAND);
+            }
             break;
 
         case 14:
@@ -567,6 +570,9 @@ function draw() {
                 cursor(HAND);
             }
             break;
+
+
+         
     }
 
 }
@@ -888,9 +894,9 @@ function mousePressed() {
     }
 
     //BOTÓN NO  ACOMPAÑAMIENTOS
-    if (mouseX >= 96 && mouseX <= 142 && mouseY >= 430 && mouseY <= 472 && pantalla == 12) {
-        pantalla = 15;
-    }
+    //if (mouseX >= 96 && mouseX <= 142 && mouseY >= 430 && mouseY <= 472 && pantalla == 12) {
+    //    pantalla = 15;
+    //}
 
     //BOTÓN SI ADICIONES 
     if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 11) {
@@ -899,7 +905,7 @@ function mousePressed() {
 
     //BOTÓN NO  ADICIONES
     if (mouseX >= 93 && mouseX <= 140 && mouseY >= 431 && mouseY <= 476 && pantalla == 11) {
-        pantalla = 12;
+        pantalla = 15;
     }
 
     //BOTÓN DEVOLVER ADICIONES
@@ -908,14 +914,14 @@ function mousePressed() {
     }
 
     //BOTÓN SI ACOMPAÑAMIENTOS 
-    if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 12) {
-        pantalla = 14;
-    }
+   // if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472 && pantalla == 12) {
+   //     pantalla = 14;
+   // }
 
     //BOTÓN DEVOLVER ACOMPAÑAMIENTOS
-    if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 12) {
-        pantalla = 1;
-    }
+   // if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 12) {
+  //      pantalla = 1;
+  //  }
 
     //DEVOLVER PAGO
     if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61 && pantalla == 15) {
@@ -1022,22 +1028,6 @@ if (adicion4.cantidad < 0) {
 
 }
 
-/*
-     //INCREMENTAR CANTIDAD DE ADICIONES QUESO
-     if (mouseX >= 291 && mouseX <= 316 && mouseY >= 441 && mouseY <= 464 && pantalla == 13) {
-
-        adicion4.cantidad++;
-     
-    }
-
-    if (mouseX >= 217 && mouseX <= 241 && mouseY >= 447 && mouseY <= 459 && pantalla == 13) {
-        adicion4.cantidad--;
-    }
-
-    if (adicion4.cantidad < 0) {
-        adicion4.cantidad = 0;
-    }*/
-
      //INCREMENTAR CANTIDAD DE ADICIONES SALSAS
      if (mouseX >= 292 && mouseX <= 316 && mouseY >= 561 && mouseY <= 582 && pantalla == 13) {
 
@@ -1066,6 +1056,14 @@ if (adicion4.cantidad < 0) {
 
     if (adicion6.cantidad < 0) {
         adicion6.cantidad = 0;
+    }
+    
+
+
+
+    //BOTÓN CONTINUAR ADICIONES
+    if (mouseX >= 129 && mouseX <= 249 && mouseY >= 732 && mouseY <= 768 && pantalla == 13) {
+        pantalla = 15;
     }
 
 
