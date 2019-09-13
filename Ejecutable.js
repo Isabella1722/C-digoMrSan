@@ -7,13 +7,14 @@ let cantidad;
 let plato1, plato2, plato3, plato4;
 let adicion1, adicion2, adicion3, adicion4, adicion5, adicion6;
 let loginScreen;
+
 let registroScreen;
 let efectivoScreen;
 let tarjetaScreen;
 let direccionScreen;
 let arrayUsuario;
 let cantidadA;
-//let usuarios =[];
+let usuarios = [];
 
 
 function preload() {
@@ -63,6 +64,11 @@ function setup() {
     tarjetaScreen = new Tarjeta();
     direccionScreen = new Direccion();
     arrayUsuario = [];
+    ///////
+    let usuariosGuardados = localStorage.getItem('usuarios');
+    if (usuariosGuardados) {
+        usuarios = JSON.parse(usuariosGuardados);
+    }
 
 
     adicion1 = new Adicion(1, "Pan integral", 1500, 0);
@@ -582,7 +588,7 @@ function keyPressed() {
         case 0:
             if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && keyCode != RETURN && keyCode != TAB && keyCode != ESCAPE
                 && keyCode != OPTION && keyCode != UP_ARROW && keyCode != DOWN_ARROW && keyCode != LEFT_ARROW && keyCode != RIGHT_ARROW
-                && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20) {
+                && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20 && keyCode != 144) {
                 loginScreen.writeTextInput(key);
             } else if (keyCode == BACKSPACE) {
                 loginScreen.eraseTextInput();
