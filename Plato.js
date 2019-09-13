@@ -1,5 +1,5 @@
 class Plato {
-    constructor(idSandwich, nombre, ingredientes,/* idAdiciones, idComplementos*/ precio, cantidad, /*evaluarAdicion, evaluarComplemento*/) {
+    constructor(idSandwich, nombre, ingredientes,/* idAdiciones*/ precio, cantidad/*evaluarAdicion, evaluarComplemento*/) {
         this.idSandwich = idSandwich;
         this.nombre = nombre;
         this.ingredientes = ingredientes;
@@ -7,6 +7,8 @@ class Plato {
        // this.idComplementos = idComplementos;
         this.precio = precio;
         this.cantidad = cantidad;
+        this.precioT;
+      //  this.precioT=this.precio*this.cantidad;
        // this.evaluarAdicion = evaluarAdicion;
        // this.evaluarComplemento = evaluarComplemento;
 /*
@@ -80,4 +82,11 @@ class Plato {
 
         }*/
     }
+
+  
+
+calcularPrecioTotal() {
+        this.precioT= (this.precio*this.cantidad);
+}
+
 }

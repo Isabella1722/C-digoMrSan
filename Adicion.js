@@ -1,9 +1,12 @@
 class Adicion {
-    constructor(idAdiciones,nombre,precio,cantidad) {
+    constructor(idAdiciones,nombre,precioA,cantidadA) {
         this.idAdiciones = idAdiciones;
         this.nombre = nombre;
-        this.cantidad = cantidad;
-        this.precio = precio;
+        this.cantidadA = cantidadA;
+        this.precioA = precioA;
         
     }
+    calcularPrecioTotalA() {
+        this.precioTA= (this.precioA*this.cantidadA);
+}
 }
