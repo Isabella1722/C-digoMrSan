@@ -14,7 +14,7 @@ let tarjetaScreen;
 let direccionScreen;
 let arrayUsuario;
 let cantidadA;
-//let usuarios =[];
+let usuarios = [];
 
 
 function preload() {
@@ -64,8 +64,13 @@ function setup() {
     tarjetaScreen = new Tarjeta();
     direccionScreen = new Direccion();
     arrayUsuario = [];
+    ///////
+    let usuariosGuardados = localStorage.getItem('usuarios');
+    if (usuariosGuardados) {
+        usuarios = JSON.parse(usuariosGuardados);
+    }
 
-
+    /////
     adicion1=new Adicion(1,"Pan integral",1500,0);
     adicion2=new Adicion(2,"Pan común",1000,0);
     adicion3=new Adicion(3,"Tomate",500,0);
@@ -75,9 +80,6 @@ function setup() {
   //  let usuariosGuardados=localStorage.getItem('usuarios');
   //  if (usuariosGuardados){
 
- //       usuarios=JSON.parse(usuariosGuardados);
-  //  }
-    
 }
 //platosArreglo = [];
 
@@ -583,7 +585,7 @@ function keyPressed() {
         case 0:
             if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && keyCode != RETURN && keyCode != TAB && keyCode != ESCAPE
                 && keyCode != OPTION && keyCode != UP_ARROW && keyCode != DOWN_ARROW && keyCode != LEFT_ARROW && keyCode != RIGHT_ARROW
-                && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20) {
+                && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20 && keyCode != 144) {
                 loginScreen.writeTextInput(key);
             } else if (keyCode == BACKSPACE) {
                 loginScreen.eraseTextInput();
@@ -681,7 +683,7 @@ function mousePressed() {
     // BOTÓN ENTRAR REGISTRO
     if (mouseX >= 124 && mouseX <= 246 && mouseY >= 623 && mouseY <= 646 && pantalla == 0) {
         pantalla = 2;
-        userInput.remove();
+        /*userInput.remove();
         passwordInput.remove();
         emailInput = createInput('', 'email');
         createPassword = createInput('');
@@ -691,14 +693,14 @@ function mousePressed() {
         createPassword.position(66, 380);
         createPassword.size(255, 15);
         direccionInput.position(66, 475);
-        direccionInput.size(255, 15);
+        direccionInput.size(255, 15);*/
 
     }
 
     // BOTÓN REGISTRO VOLVER 
     if (mouseX >= 0 && mouseX <= 67 && mouseY >= 1 && mouseY <= 66 && pantalla == 2) {
         pantalla = 0;
-        emailInput.remove();
+        /*emailInput.remove();
         createPassword.remove();
         direccionInput.remove();
         userInput = createInput('');
@@ -706,7 +708,7 @@ function mousePressed() {
         userInput.position(66, 405);
         userInput.size(255, 15);
         passwordInput.position(66, 480);
-        passwordInput.size(255, 15);
+        passwordInput.size(255, 15);*/
 
     }
 
@@ -718,15 +720,22 @@ function mousePressed() {
             console.log(arrayUsuario.lenght);
         }*/
         pantalla = 1;
-        emailInput.hide();
-        createPassword.hide();
-        nombreInput.hide();
-      /* let user =new Usuario(nombreInput, createPassword,emailInput);
-       usuarios.push(user);
-       nombreInput='';
-       createPassword='';
-       emailInput='';
-    localStorage.setItem('usuarios',JSON.stringify(usuarios)); */
+        /*for(let i = 0; i<registoScreen.length; i++){
+
+        }*/
+        let user = new Usuario(registroScreen.arrayInputs[0].string, registroScreen.arrayInputs[1].string, registroScreen.arrayInputs[2].string);
+        usuarios.push(user);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        registroScreen.arrayInputs[0].string = '';
+        registroScreen.arrayInputs[1].string = '';
+        registroScreen.arrayInputs[2].string = '';
+        //localStorage.clear();
+        console.log(usuarios.length);
+        
+        //nombreInput = '';
+        //createPassword = '';
+        //emailInput = '';
+        
     }
 
     //BOTÓN SANDWICH CRIOLLO
@@ -794,12 +803,12 @@ function mousePressed() {
     //BOTÓN CERRAR SESION
     if (mouseX >= 2 && mouseX <= 257 && mouseY >= 196 && mouseY <= 261 && pantalla == 3) {
         pantalla = 0;
-        userInput = createInput('');
+        /*userInput = createInput('');
         passwordInput = createInput('', 'password');
         userInput.position(66, 405);
         userInput.size(255, 15);
         passwordInput.position(66, 480);
-        passwordInput.size(255, 15);
+        passwordInput.size(255, 15);*/
     }
 
     //BOTÓN DEVOLVER CERRAR SESION
@@ -810,12 +819,12 @@ function mousePressed() {
     //BOTÓN CERRAR DEFINITIVAMENTE SESION
     if (mouseX >= 161 && mouseX <= 224 && mouseY >= 533 && mouseY <= 589 && pantalla == 9) {
         pantalla = 0;
-        userInput = createInput('');
+        /*userInput = createInput('');
         passwordInput = createInput('', 'password');
         userInput.position(66, 405);
         userInput.size(255, 15);
         passwordInput.position(66, 480);
-        passwordInput.size(255, 15);
+        passwordInput.size(255, 15);*/
     }
 
     //INCREMENTAR CANTIDAD DE SANDWICH CRIOLLO
