@@ -1,4 +1,4 @@
-class Efectivo {
+class Efectivo{
     constructor() {
         this.incrementPosY = 0;
         this.arrayInputs = [];

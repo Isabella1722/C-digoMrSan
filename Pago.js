@@ -1,20 +1,10 @@
 class Pago {
-    constructor(costoTotal,monto) {
+    constructor(costoTotal, monto) {
         this.costoTotal = costoTotal;
         this.monto = monto;
+        this.validarPago = false;
     }
-    pagoRecibido (){
-        
-        if(costoTotal>monto){
-       Text("Pago sin éxito",250,520);
-
-
-        }else{
-        Text("Pago éxitoso",300,520);
-
-        }
-    
+    pagoRecibido() {
+        text("Pago sin éxito", 250, 520);
     }
-
-
 }

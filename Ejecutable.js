@@ -25,6 +25,7 @@ let nombrePlato;
 let precioPlato;
 let cantPlato;
 let cambio;
+
 function preload() {
     inicio = loadImage("data/inicio.jpg");
     acompa = loadImage("data/Acompa.jpg");
@@ -54,7 +55,7 @@ function preload() {
 
 function setup() {
     createCanvas(375, 812);
-    pantalla = 1;
+    pantalla = 0;
     /*userInput = createInput('');
     passwordInput = createInput('', 'password');
     userInput.position(66, 405);
@@ -93,7 +94,6 @@ function setup() {
 
     //       usuarios=JSON.parse(usuariosGuardados);
     //  }
-
     evaluarMarco1 = false;
     evaluarMarco2 = false;
     cambio=0;
@@ -410,6 +410,9 @@ function draw() {
             if (mouseX >= 161 && mouseX <= 224 && mouseY >= 533 && mouseY <= 589) {
                 cursor(HAND);
             }
+            textSize(50);
+            textAlign(CENTER);
+            text(loginScreen.arrayInputs[0].getText(),width/2,440);
             break;
 
         case 10:
@@ -661,6 +664,7 @@ function draw() {
                 textAlign(CENTER);
                 text(cambio, 170, 615);
             }
+
             break;
 
         case 17:
@@ -712,6 +716,11 @@ function draw() {
             fill(0);
             textSize(18);
             textAlign(LEFT);
+            text(loginScreen.arrayInputs[0].getText(), 130, 124);
+
+            fill(0);
+            textSize(18);
+            textAlign(LEFT);
             text("Cra: "+direccionScreen.arrayInputs[0].getText() + " " + direccionScreen.arrayInputs[1].getText() + " " + direccionScreen.arrayLong[0].getText(), 130, 154)
 
             fill(0);
@@ -735,7 +744,7 @@ function draw() {
             text(precioPlato,138,225);
             text(cantPlato,280,225);
             
-         
+
             break;
     }
 }
@@ -818,9 +827,9 @@ function mousePressed() {
     switch (pantalla) {
         case 0:
             //BOTÓN ENTRAR
-            if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && loginScreen.arrayInputs[0].string == 'Esteban') {
+            if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && (loginScreen.arrayInputs[0].getText() == 'Felipe'
+            || loginScreen.arrayInputs[0].getText() == 'felipe') && loginScreen.arrayInputs[1].getText() == '12345') {
                 pantalla = 1;
-                console.log(":v");
             }
             // BOTÓN ENTRAR REGISTRO
             if (mouseX >= 124 && mouseX <= 246 && mouseY >= 623 && mouseY <= 646) {
@@ -1115,7 +1124,7 @@ function mousePressed() {
                 pantalla = 15;
             }
             //BOTON CONTINUAR EFECTIVO
-            if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734) {
+            if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734 && totalTodo<=efectivoScreen.arrayInputs[0].getText()) {
                 pantalla = 18;
             }
             break;
