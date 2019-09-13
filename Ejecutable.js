@@ -692,6 +692,11 @@ function draw() {
             if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93) {
                 cursor(HAND);
             }
+
+            fill(0);
+            textSize(18);
+            textAlign(CENTER);
+            text(totalTodo, 116, 625);
             break;
 
 
