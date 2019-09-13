@@ -7,6 +7,7 @@ let cantidad;
 let plato1, plato2, plato3, plato4;
 let adicion1,adicion2,adicion3,adicion4,adicion5,adicion6;
 let loginScreen;
+
 let registroScreen;
 let efectivoScreen;
 let tarjetaScreen;
