@@ -20,6 +20,9 @@ let precioTotalCompra;
 let evaluarMarco1;
 let evaluarMarco2;
 let totalTodo;
+let tipoPlato;
+let nombrePlato;
+
 function preload() {
     inicio = loadImage("data/inicio.jpg");
     acompa = loadImage("data/Acompa.jpg");
@@ -49,7 +52,7 @@ function preload() {
 
 function setup() {
     createCanvas(375, 812);
-    pantalla = 4;
+    pantalla = 18;
     /*userInput = createInput('');
     passwordInput = createInput('', 'password');
     userInput.position(66, 405);
@@ -59,7 +62,7 @@ function setup() {
     cantidad = 0;
     cantidadA = 0;
     precioTAdicionesCompra = 0;
-    totalTodo=0;
+    totalTodo = 0;
     plato1 = new Plato(1, "Sandwich Criollo", "Carne de res desmechada,hogo, maduro y maíz tierno", 13400, 0);
     plato2 = new Plato(2, "Sandwich Cubano", "Jamón de cerdo,queso mozzarella, lechuga,tomate", 9200, 0);
     plato3 = new Plato(3, "Sandwich Italiano", "Roast beff,jamón,salami,queso parmesano,pasta,tomate", 13400, 0);
@@ -89,8 +92,8 @@ function setup() {
     //       usuarios=JSON.parse(usuariosGuardados);
     //  }
 
-    evaluarMarco1=false;
-    evaluarMarco2=false;
+    evaluarMarco1 = false;
+    evaluarMarco2 = false;
 
 }
 //platosArreglo = [];
@@ -214,8 +217,9 @@ function draw() {
             break;
 
         case 4:
-
             //PANTALLA SANDWICH CRIOLLO
+            tipoPlato = plato1.idSandwich;
+            nombrePlato = plato1.nombre;
             image(sCriollo, 0, 0);
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
@@ -257,6 +261,8 @@ function draw() {
         case 5:
 
             //PANTALLA SANDWICH CUBANO
+            tipoPlato = plato2.idSandwich;
+            nombrePlato = plato2.nombre;
             image(sQubano, 0, 0);
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
@@ -295,6 +301,8 @@ function draw() {
         case 6:
 
             //PANTALLA SANDWICH CUBANO
+            tipoPlato = plato3.idSandwich;
+            nombrePlato = plato3.nombre;
             image(sItaliano, 0, 0);
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
@@ -337,6 +345,8 @@ function draw() {
         case 7:
 
             //PANTALLA SANDWICH VEGETARIANO
+            tipoPlato = plato4.idSandwich;
+            nombrePlato = plato4.nombre;
             image(sVegetariano, 0, 0);
             if (mouseX >= 21 && mouseX <= 69 && mouseY >= 23 && mouseY <= 59) {
                 cursor(HAND);
@@ -431,6 +441,12 @@ function draw() {
 
             //PANTALLA   ADICIONES
             image(adiciones, 0, 0);
+            textSize(25);
+            fill(239, 127, 26)
+            text(nombrePlato, width / 2 - 20, 210);
+            textSize(16);
+            fill(0);
+            text(tipoPlato, 78, 130);
             if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
                 cursor(HAND);
             }
@@ -445,6 +461,7 @@ function draw() {
             text(adicion1.cantidadA, 268, 340);
             //CALCULO DE PRECIO TOTAL
             adicion1.calcularPrecioTotalA();
+            //text(plato1.idSandwich,84,216);
 
             fill(0);
             textSize(18);
@@ -574,9 +591,9 @@ function draw() {
                 + adicion5.precioTA + adicion6.precioTA)
 
 
-                precioTotalCompra=(plato1.precioT+plato2.precioT+plato3.precioT+plato4.precioT);
+            precioTotalCompra = (plato1.precioT + plato2.precioT + plato3.precioT + plato4.precioT);
 
-                 totalTodo=precioTAdicionesCompra+precioTotalCompra;
+            totalTodo = precioTAdicionesCompra + precioTotalCompra;
             fill(0);
             textSize(18);
             textAlign(CENTER);
@@ -639,39 +656,39 @@ function draw() {
             tarjetaScreen.paint();
 
             //MASTERCARD
-            if (evaluarMarco1==true){
-                evaluarMarco2==false;
-                image(marco, 74, 587,96,66);
+            if (evaluarMarco1 == true) {
+                evaluarMarco2 == false;
+                image(marco, 74, 587, 96, 66);
             }
             //VISA
 
-            if (evaluarMarco2==true){
-                evaluarMarco1==false;
+            if (evaluarMarco2 == true) {
+                evaluarMarco1 == false;
 
-                image(marco, 200, 585,96,66);
+                image(marco, 200, 585, 96, 66);
             }
 
-            
+
 
             //VISA
-           /* if (mouseX >= 83 && mouseX <= 162 && mouseY >= 590 && mouseY <= 649) {
-                evaluarMarco1=true;
-                if (evaluarMarco1==true){
-                    
-
-                }
-          
-            }
-            //MASTERCARD
-            if (mouseX >= 208 && mouseX <= 292 && mouseY >= 595 && mouseY <= 647) {
-                evaluarMarco2=true;
-                if (evaluarMarco2==true){
-                    
-                 
-               
-
-                }
-            }*/
+            /* if (mouseX >= 83 && mouseX <= 162 && mouseY >= 590 && mouseY <= 649) {
+                 evaluarMarco1=true;
+                 if (evaluarMarco1==true){
+                     
+ 
+                 }
+           
+             }
+             //MASTERCARD
+             if (mouseX >= 208 && mouseX <= 292 && mouseY >= 595 && mouseY <= 647) {
+                 evaluarMarco2=true;
+                 if (evaluarMarco2==true){
+                     
+                  
+                
+ 
+                 }
+             }*/
             break;
 
         case 18:
@@ -692,16 +709,17 @@ function draw() {
             if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93) {
                 cursor(HAND);
             }
+            fill(0);
+            textSize(18);
+            textAlign(LEFT);
+            text(direccionScreen.arrayInputs[0].getText() + " " + direccionScreen.arrayInputs[1].getText() + " " + direccionScreen.arrayLong[0].getText(), 130, 154)
 
             fill(0);
             textSize(18);
             textAlign(CENTER);
             text(totalTodo, 116, 625);
             break;
-
-
     }
-
 }
 
 function keyPressed() {
@@ -782,7 +800,7 @@ function mousePressed() {
     switch (pantalla) {
         case 0:
             //BOTÓN ENTRAR
-            if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && loginScreen.arrayInputs[0].string=='Esteban') {
+            if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && loginScreen.arrayInputs[0].string == 'Esteban') {
                 pantalla = 1;
                 console.log(":v");
             }
@@ -1092,19 +1110,19 @@ function mousePressed() {
             if (mouseX >= 128 && mouseX <= 248 && mouseY >= 694 && mouseY <= 734) {
                 pantalla = 18;
             }
-            
+
             //VISA
             if (mouseX >= 83 && mouseX <= 162 && mouseY >= 590 && mouseY <= 649) {
-                
-               evaluarMarco1=true;
-               evaluarMarco2=false;
+
+                evaluarMarco1 = true;
+                evaluarMarco2 = false;
             }
             //MASTERCARD
             if (mouseX >= 208 && mouseX <= 292 && mouseY >= 595 && mouseY <= 647) {
-               evaluarMarco2=true;
-               evaluarMarco1=false;
-               
-               
+                evaluarMarco2 = true;
+                evaluarMarco1 = false;
+
+
             }
             break;
         case 18:

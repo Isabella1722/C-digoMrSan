@@ -25,8 +25,8 @@ class Direccion {
 
     focusInputs(mX, mY) {
         for (let i = 0; i < this.arrayInputs.length; i++) {
-            if (mX >= this.arrayInputs[i].getPosX() && mX <= this.arrayInputs[i].getPosX() + 200
-                && mY >= this.arrayInputs[i].getPosY() && mY <= this.arrayInputs[i].getPosY() + 30) {
+            if (mX >= this.arrayInputs[i].getPosX() && mX <= this.arrayInputs[i].getPosX() + 185
+                && mY >= this.arrayInputs[i].getPosY() && mY <= this.arrayInputs[i].getPosY() + 20) {
                 this.arrayInputs[i].setFocus(true);
             } else {
                 this.arrayInputs[i].setFocus(false);
@@ -34,8 +34,8 @@ class Direccion {
         }
 
         for (let i = 0; i < this.arrayLong.length; i++) {
-            if (mX >= this.arrayLong[i].getPosX() && mX <= this.arrayLong[i].getPosX() + 200
-                && mY >= this.arrayLong[i].getPosY() && mY <= this.arrayLong[i].getPosY() + 30) {
+            if (mX >= this.arrayLong[i].getPosX() && mX <= this.arrayLong[i].getPosX() + 268
+                && mY >= this.arrayLong[i].getPosY() && mY <= this.arrayLong[i].getPosY() + 20) {
                 this.arrayLong[i].setFocus(true);
             } else {
                 this.arrayLong[i].setFocus(false);

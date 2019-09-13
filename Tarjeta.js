@@ -32,7 +32,7 @@ class Tarjeta {
 
     focusInputs(mX, mY) {
         for (let i = 0; i < this.arrayInputs.length; i++) {
-            if (mX >= this.arrayInputs[i].getPosX() && mX <= this.arrayInputs[i].getPosX() + 200
+            if (mX >= this.arrayInputs[i].getPosX() && mX <= this.arrayInputs[i].getPosX() + 203
                 && mY >= this.arrayInputs[i].getPosY() && mY <= this.arrayInputs[i].getPosY() + 20) {
                 this.arrayInputs[i].setFocus(true);
             } else {
@@ -42,7 +42,7 @@ class Tarjeta {
 
         for (let i = 0; i < this.arrayMini.length; i++) {
             if (mX >= this.arrayMini[i].getPosX() && mX <= this.arrayMini[i].getPosX() + 60
-                && mY >= this.arrayMini[i].getPosY() && mY <= this.arrayMini[i].getPosY() + 30) {
+                && mY >= this.arrayMini[i].getPosY() && mY <= this.arrayMini[i].getPosY() + 20) {
                 this.arrayMini[i].setFocus(true);
             } else {
                 this.arrayMini[i].setFocus(false);

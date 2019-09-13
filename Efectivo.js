@@ -17,8 +17,8 @@ class Efectivo {
 
     focusInputs(mX, mY) {
         for (let i = 0; i < this.arrayInputs.length; i++) {
-            if (mX >= this.arrayInputs[i].getPosX() && mX <= this.arrayInputs[i].getPosX() + 200
-                && mY >= this.arrayInputs[i].getPosY() && mY <= this.arrayInputs[i].getPosY() + 30) {
+            if (mX >= this.arrayInputs[i].getPosX() && mX <= this.arrayInputs[i].getPosX() + 178
+                && mY >= this.arrayInputs[i].getPosY() && mY <= this.arrayInputs[i].getPosY() + 20) {
                 this.arrayInputs[i].setFocus(true);
             } else {
                 this.arrayInputs[i].setFocus(false);
