@@ -700,6 +700,14 @@ function mousePressed() {
             // BOTÓN REGISTRO
             if (mouseX >= 159 && mouseX <= 214 && mouseY >= 551 && mouseY <= 608) {
                 pantalla = 1;
+                let user = new Usuario(registroScreen.arrayInputs[0].string, registroScreen.arrayInputs[1].string, registroScreen.arrayInputs[2].string);
+                usuarios.push(user);
+                localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                registroScreen.arrayInputs[0].string = '';
+                registroScreen.arrayInputs[1].string = '';
+                registroScreen.arrayInputs[2].string = '';
+                localStorage.clear();
+                console.log(usuarios.length);
             }
             break;
         case 3:
