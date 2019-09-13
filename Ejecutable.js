@@ -2,13 +2,14 @@ let pantalla;
 let inicio, acompa, acompaNumero, adiciones, alerta1, alerta2, perfil, confirmarDir, efectivo, pago, factura,
     historialPedido, menu, menuP, papitas, registro, sCriollo, sVegetariano, sQubano, sItaliano, tarjeta;
 let platosArreglo;
-let sandwichCriollo, sandwichCubano, sandwichItaliano, sandwichVegetariano;
+//let sandwichCriollo, sandwichCubano, sandwichItaliano, sandwichVegetariano;
 let cantidad;
 let plato1, plato2, plato3, plato4;
 let loginScreen;
 let registroScreen;
 let efectivoScreen;
 let tarjetaScreen;
+let direccionScreen;
 let arrayUsuario;
 //let usuarios =[];
 
@@ -40,7 +41,7 @@ function preload() {
 
 function setup() {
     createCanvas(375, 812);
-    pantalla = 17;
+    pantalla = 18;
     /*userInput = createInput('');
     passwordInput = createInput('', 'password');
     userInput.position(66, 405);
@@ -58,6 +59,7 @@ function setup() {
     registroScreen = new Registro();
     efectivoScreen = new Efectivo();
     tarjetaScreen = new Tarjeta();
+    direccionScreen = new Direccion();
     arrayUsuario = [];
     let usuariosGuardados=localStorage.getItem('usuarios');
   //  if (usuariosGuardados){
@@ -449,29 +451,24 @@ function draw() {
             break;
 
         case 18:
-
             //PANTALLA  CONFIRMAR
             image(confirmarDir, 0, 0);
-
-
             if (mouseX >= 165 && mouseX <= 205 && mouseY >= 582 && mouseY <= 632) {
                 cursor(HAND);
             }
-
-
+            fill(0);
+            textSize(16);
+            textAlign(CENTER);
+            text("Especificación:", 109, 466);
+            direccionScreen.paint()
             break;
         case 19:
-
             //PANTALLA  FACTURA
             image(factura, 0, 0);
             if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93) {
                 cursor(HAND);
             }
-
-
-
             break;
-
     }
 
 }
@@ -515,6 +512,15 @@ function keyPressed() {
                 tarjetaScreen.eraseTextInput();
             }
             break;
+        case 18:
+            if (keyCode != BACKSPACE && keyCode != DELETE && keyCode != ENTER && keyCode != RETURN && keyCode != TAB && keyCode != ESCAPE
+                && keyCode != OPTION && keyCode != UP_ARROW && keyCode != DOWN_ARROW && keyCode != LEFT_ARROW && keyCode != RIGHT_ARROW
+                && keyCode != CONTROL && keyCode != SHIFT && keyCode != ALT && keyCode != 20) {
+                direccionScreen.writeTextInput(key);
+            } else if (keyCode == BACKSPACE) {
+                direccionScreen.eraseTextInput();
+            }
+            break;
     }
 }
 
@@ -536,6 +542,10 @@ function mousePressed() {
 
     if (pantalla == 17) {
         tarjetaScreen.focusInputs(mouseX, mouseY);
+    }
+
+    if (pantalla == 18) {
+        direccionScreen.focusInputs(mouseX, mouseY);
     }
 
     //BOTÓN IR A PERFIL
