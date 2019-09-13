@@ -618,6 +618,11 @@ function draw() {
             }
 
             efectivoScreen.paint();
+
+            fill(0);
+            textSize(18);
+            textAlign(CENTER);
+            text(totalTodo, 170, 424);
             break;
 
         case 17:
