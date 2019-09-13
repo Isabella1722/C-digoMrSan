@@ -15,12 +15,9 @@ let direccionScreen;
 let arrayUsuario;
 let cantidadA;
 let usuarios = [];
-<<<<<<< HEAD
 let precioTAdicionesCompra;
-=======
 let user1;
 
->>>>>>> 7d4efbd48eb09e89e31c5100b0169d7947232eef
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -57,12 +54,8 @@ function setup() {
     passwordInput.position(66, 480);
     passwordInput.size(255, 15);*/
     cantidad = 0;
-<<<<<<< HEAD
     cantidadA=0;
     precioTAdicionesCompra = 0;
-=======
-    cantidadA = 0;
->>>>>>> 7d4efbd48eb09e89e31c5100b0169d7947232eef
     plato1 = new Plato(1, "Sandwich Criollo", "Carne de res desmechada,hogo, maduro y maíz tierno", 13400, 0);
     plato2 = new Plato(2, "Sandwich Cubano", "Jamón de cerdo,queso mozzarella, lechuga,tomate", 9200, 0);
     plato3 = new Plato(3, "Sandwich Italiano", "Roast beff,jamón,salami,queso parmesano,pasta,tomate", 13400, 0);
