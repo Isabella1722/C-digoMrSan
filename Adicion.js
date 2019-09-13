@@ -1,12 +1,9 @@
 class Adicion {
-    constructor(idAdiciones, precio, panIntegral, panComun, tomate, queso, salsas, proteina) {
+    constructor(idAdiciones,nombre,precio,cantidad) {
         this.idAdiciones = idAdiciones;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
         this.precio = precio;
-        this.panIntegral = panIntegral;
-        this.panComun = panComun;
-        this.tomate = tomate;
-        this.queso = queso;
-        this.salsas = salsas;
-        this.proteina = proteina;
+        
     }
 }

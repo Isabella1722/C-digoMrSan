@@ -5,13 +5,16 @@ let platosArreglo;
 //let sandwichCriollo, sandwichCubano, sandwichItaliano, sandwichVegetariano;
 let cantidad;
 let plato1, plato2, plato3, plato4;
+let adicion1,adicion2,adicion3,adicion4,adicion5,adicion6;
 let loginScreen;
 let registroScreen;
 let efectivoScreen;
 let tarjetaScreen;
 let direccionScreen;
 let arrayUsuario;
-let usuarios = [];
+let cantidadA;
+//let usuarios =[];
+
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -48,7 +51,7 @@ function setup() {
     passwordInput.position(66, 480);
     passwordInput.size(255, 15);*/
     cantidad = 0;
-
+    cantidadA=0;
     plato1 = new Plato(1, "Sandwich Criollo", "Carne de res desmechada,hogo, maduro y maíz tierno", 13400, 0);
     plato2 = new Plato(2, "Sandwich Cubano", "Jamón de cerdo,queso mozzarella, lechuga,tomate", 9200, 0);
     plato3 = new Plato(3, "Sandwich Italiano", "Roast beff,jamón,salami,queso parmesano,pasta,tomate", 13400, 0);
@@ -60,11 +63,21 @@ function setup() {
     tarjetaScreen = new Tarjeta();
     direccionScreen = new Direccion();
     arrayUsuario = [];
+    ///////
     let usuariosGuardados = localStorage.getItem('usuarios');
     if (usuariosGuardados) {
-
         usuarios = JSON.parse(usuariosGuardados);
     }
+
+    /////
+    adicion1=new Adicion(1,"Pan integral",1500,0);
+    adicion2=new Adicion(2,"Pan común",1000,0);
+    adicion3=new Adicion(3,"Tomate",500,0);
+    adicion4=new Adicion(4,"Queso",1000,0);
+    adicion5=new Adicion(5,"Salsa",100,0);
+    adicion6=new Adicion(6,"proteinas",2000,0);
+  //  let usuariosGuardados=localStorage.getItem('usuarios');
+  //  if (usuariosGuardados){
 
 }
 //platosArreglo = [];
@@ -374,6 +387,9 @@ function draw() {
             if (mouseX >= 230 && mouseX <= 280 && mouseY >= 434 && mouseY <= 472) {
                 cursor(HAND);
             }
+
+            
+
             break;
 
         case 12:
@@ -395,6 +411,91 @@ function draw() {
             if (mouseX >= 22 && mouseX <= 66 && mouseY >= 24 && mouseY <= 61) {
                 cursor(HAND);
             }
+
+            //BOTONES PAN INTEGRAL
+            if (mouseX >= 290 && mouseX <= 313 && mouseY >= 320 && mouseY <= 345) {
+                cursor(HAND);
+            }
+
+            fill(255);
+            textSize(22);
+            text(adicion1.cantidad, 268, 340); 
+
+            if (mouseX >= 216 && mouseX <= 241 && mouseY >= 328 && mouseY <= 339 ) {
+                cursor(HAND);
+            }
+            
+            //BOTONES PAN COMUN
+            //SUMA
+            if (mouseX >= 291 && mouseX <= 314 && mouseY >= 382 && mouseY <= 405) {
+                cursor(HAND);
+            }
+
+            fill(255);
+            textSize(22);
+            text(adicion2.cantidad, 268, 400); 
+            //RESTA
+            if (mouseX >= 218 && mouseX <= 240 && mouseY >= 388 && mouseY <= 395 ) {
+                cursor(HAND);
+            }
+
+            //BOTONES TOMATE 
+            //SUMA
+            if (mouseX >= 291 && mouseX <= 316 && mouseY >= 441 && mouseY <= 464) {
+                cursor(HAND);
+            }
+
+            fill(255);
+            textSize(22);
+            text(adicion3.cantidad, 268, 459); 
+            //RESTA
+            if (mouseX >= 217 && mouseX <= 241 && mouseY >= 447 && mouseY <= 459 ) {
+                cursor(HAND);
+            }
+
+            //BOTONES QUESO 
+            //SUMA
+            if (mouseX >= 290 && mouseX <= 314 && mouseY >= 502 && mouseY <= 523) {
+                cursor(HAND);
+            }
+
+            fill(255);
+            textSize(22);
+            text(adicion4.cantidad, 268, 518); 
+            //RESTA
+            if (mouseX >= 216 && mouseX <= 240 && mouseY >= 501 && mouseY <= 515 ) {
+                cursor(HAND);
+            }
+
+             //BOTONES SALSAS 
+            //SUMA
+            if (mouseX >= 292 && mouseX <= 316 && mouseY >= 561 && mouseY <= 582) {
+                cursor(HAND);
+            }
+
+            fill(255);
+            textSize(22);
+            text(adicion5.cantidad, 268, 578); 
+            //RESTA
+            if (mouseX >= 216 && mouseX <= 242 && mouseY >= 563 && mouseY <= 573 ) {
+                cursor(HAND);
+            }
+
+            
+             //BOTONES PROTEÍNA 
+            //SUMA
+            if (mouseX >= 291 && mouseX <= 314 && mouseY >= 619 && mouseY <= 640) {
+                cursor(HAND);
+            }
+
+            fill(255);
+            textSize(22);
+            text(adicion6.cantidad, 268, 635); 
+            //RESTA
+            if (mouseX >= 216 && mouseX <= 240 && mouseY >= 625 && mouseY <= 633 ) {
+                cursor(HAND);
+            }
+
             break;
 
         case 14:
@@ -861,11 +962,120 @@ function mousePressed() {
     if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93 && pantalla == 19) {
         pantalla = 1;
     }
+
+    //INCREMENTAR CANTIDAD DE ADICIONES PAN INTEGRAL
+    if (mouseX >= 290 && mouseX <= 313 && mouseY >= 320 && mouseY <= 345 && pantalla == 13) {
+
+        adicion1.cantidad++;
+     
+    }
+
+    if (mouseX >= 216 && mouseX <= 241 && mouseY >= 328 && mouseY <= 339 && pantalla == 13) {
+        adicion1.cantidad--;
+    }
+
+    if (adicion1.cantidad < 0) {
+        adicion1.cantidad = 0;
+    }
+
+    //INCREMENTAR CANTIDAD DE ADICIONES PAN COMUN
+    if (mouseX >= 291 && mouseX <= 314 && mouseY >= 382 && mouseY <= 405 && pantalla == 13) {
+
+        adicion2.cantidad++;
+     
+    }
+
+    if (mouseX >= 218 && mouseX <= 240 && mouseY >= 388 && mouseY <= 395 && pantalla == 13) {
+        adicion2.cantidad--;
+    }
+
+    if (adicion2.cantidad < 0) {
+        adicion2.cantidad = 0;
+    }
+
+    //INCREMENTAR CANTIDAD DE ADICIONES TOMATE
+    if (mouseX >= 291 && mouseX <= 316 && mouseY >= 441 && mouseY <= 464 && pantalla == 13) {
+
+        adicion3.cantidad++;
+     
+    }
+
+    if (mouseX >= 217 && mouseX <= 241 && mouseY >= 447 && mouseY <= 459 && pantalla == 13) {
+        adicion3.cantidad--;
+    }
+
+    if (adicion3.cantidad < 0) {
+        adicion3.cantidad = 0;
+
+
+    }
+ //INCREMENTAR CANTIDAD DE ADICIONES QUESO
+ if (mouseX >= 290 && mouseX <= 314 && mouseY >= 502 && mouseY <= 523 && pantalla == 13) {
+
+    adicion4.cantidad++;
+ 
 }
 
+if (mouseX >= 216 && mouseX <= 240 && mouseY >= 501 && mouseY <= 515 && pantalla == 13) {
+    adicion4.cantidad--;
+}
+
+if (adicion4.cantidad < 0) {
+    adicion4.cantidad = 0;
+
+
+}
+
+/*
+     //INCREMENTAR CANTIDAD DE ADICIONES QUESO
+     if (mouseX >= 291 && mouseX <= 316 && mouseY >= 441 && mouseY <= 464 && pantalla == 13) {
+
+        adicion4.cantidad++;
+     
+    }
+
+    if (mouseX >= 217 && mouseX <= 241 && mouseY >= 447 && mouseY <= 459 && pantalla == 13) {
+        adicion4.cantidad--;
+    }
+
+    if (adicion4.cantidad < 0) {
+        adicion4.cantidad = 0;
+    }*/
+
+     //INCREMENTAR CANTIDAD DE ADICIONES SALSAS
+     if (mouseX >= 292 && mouseX <= 316 && mouseY >= 561 && mouseY <= 582 && pantalla == 13) {
+
+        adicion5.cantidad++;
+     
+    }
+
+    if (mouseX >= 216 && mouseX <= 242 && mouseY >= 563 && mouseY <= 573 && pantalla == 13) {
+        adicion5.cantidad--;
+    }
+
+    if (adicion5.cantidad < 0) {
+        adicion5.cantidad = 0;
+    }
+
+     //INCREMENTAR CANTIDAD DE ADICIONES PROTEÍNAS
+     if (mouseX >= 291 && mouseX <= 314 && mouseY >= 619 && mouseY <= 640 && pantalla == 13) {
+
+        adicion6.cantidad++;
+     
+    }
+
+    if (mouseX >= 216 && mouseX <= 240 && mouseY >= 625 && mouseY <= 633 && pantalla == 13) {
+        adicion6.cantidad--;
+    }
+
+    if (adicion6.cantidad < 0) {
+        adicion6.cantidad = 0;
+    }
 
 
 
+
+}
 
 
 
