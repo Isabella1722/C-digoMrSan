@@ -10,6 +10,8 @@ let registroScreen;
 let efectivoScreen;
 let tarjetaScreen;
 let arrayUsuario;
+//let usuarios =[];
+
 
 function preload() {
     inicio = loadImage("data/inicio.jpg");
@@ -57,6 +59,12 @@ function setup() {
     efectivoScreen = new Efectivo();
     tarjetaScreen = new Tarjeta();
     arrayUsuario = [];
+    let usuariosGuardados=localStorage.getItem('usuarios');
+  //  if (usuariosGuardados){
+
+ //       usuarios=JSON.parse(usuariosGuardados);
+  //  }
+    
 }
 //platosArreglo = [];
 
@@ -597,9 +605,13 @@ function mousePressed() {
         pantalla = 1;
         emailInput.hide();
         createPassword.hide();
-        direccionInput.hide();
-
-
+        nombreInput.hide();
+      /* let user =new Usuario(nombreInput, createPassword,emailInput);
+       usuarios.push(user);
+       nombreInput='';
+       createPassword='';
+       emailInput='';
+    localStorage.setItem('usuarios',JSON.stringify(usuarios)); */
     }
 
     //BOTÓN SANDWICH CRIOLLO
@@ -838,7 +850,12 @@ function mousePressed() {
     if (mouseX >= 320 && mouseX <= 340 && mouseY >= 70 && mouseY <= 93 && pantalla == 19) {
         pantalla = 1;
     }
-
 }
+
+
+
+
+
+
 
 // alt shift f  para acomodar las lineas de código

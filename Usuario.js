@@ -1,13 +1,12 @@
 class Usuario {
 
-    Usuario(correo, clave, direccionPreferida) {
+    Usuario(nombre,correo,clave) {
+        this.nombre = nombre;
         this.correo = correo;
         this.clave = clave;
-        this.direccionPreferida = direccionPreferida;
-
-
-    }
-
+        }
+ 
+    
 }
 function iniciarsesion() {
 

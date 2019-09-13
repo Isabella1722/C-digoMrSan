@@ -8,7 +8,9 @@ class Login {
         }
     }
 
-    paint() {
+    paint(
+        
+    ) {
         for (let i = 0; i < this.arrayInputs.length; i++) {
             this.arrayInputs[i].paint();
             if (i != 1) {
