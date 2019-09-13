@@ -16,9 +16,10 @@ let arrayUsuario;
 let cantidadA;
 let usuarios = [];
 let precioTAdicionesCompra;
-
+let precioTotalCompra;
 let evaluarMarco1;
 let evaluarMarco2;
+let totalTodo;
 function preload() {
     inicio = loadImage("data/inicio.jpg");
     acompa = loadImage("data/Acompa.jpg");
@@ -48,7 +49,7 @@ function preload() {
 
 function setup() {
     createCanvas(375, 812);
-    pantalla = 17;
+    pantalla = 4;
     /*userInput = createInput('');
     passwordInput = createInput('', 'password');
     userInput.position(66, 405);
@@ -58,6 +59,7 @@ function setup() {
     cantidad = 0;
     cantidadA = 0;
     precioTAdicionesCompra = 0;
+    totalTodo=0;
     plato1 = new Plato(1, "Sandwich Criollo", "Carne de res desmechada,hogo, maduro y maíz tierno", 13400, 0);
     plato2 = new Plato(2, "Sandwich Cubano", "Jamón de cerdo,queso mozzarella, lechuga,tomate", 9200, 0);
     plato3 = new Plato(3, "Sandwich Italiano", "Roast beff,jamón,salami,queso parmesano,pasta,tomate", 13400, 0);
@@ -561,15 +563,24 @@ function draw() {
             textSize(18);
             textAlign(CENTER);
             text(adicion6.precioTA, 170, 640);
+            plato1.calcularPrecioTotal();
+            plato2.calcularPrecioTotal();
+            plato3.calcularPrecioTotal();
+            plato4.calcularPrecioTotal();
+
 
 
             precioTAdicionesCompra = (adicion1.precioTA + adicion2.precioTA + adicion3.precioTA + adicion4.precioTA
                 + adicion5.precioTA + adicion6.precioTA)
 
+
+                precioTotalCompra=(plato1.precioT+plato2.precioT+plato3.precioT+plato4.precioT);
+
+                 totalTodo=precioTAdicionesCompra+precioTotalCompra;
             fill(0);
             textSize(18);
             textAlign(CENTER);
-            text(precioTAdicionesCompra, 175, 701);
+            text(totalTodo, 175, 701);
 
             break;
 
