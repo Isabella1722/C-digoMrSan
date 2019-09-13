@@ -7,6 +7,10 @@ class Login {
             this.arrayInputs[i] = new Input(57, 399 + this.incrementPosY, 260);
             this.incrementPosY += 75;
         }
+        for (let i = 0; i < this.arrayInputs.length; i++) {
+                this.string = this.arrayInputs[i].getText();
+            }
+        
     }
 
     paint() {
@@ -35,7 +39,7 @@ class Login {
         for (let i = 0; i < this.arrayInputs.length; i++) {
             if (this.arrayInputs[i].isFocus() && this.arrayInputs[i].getText().length < 25) {
                 this.arrayInputs[i].setText(this.arrayInputs[i].getText() + k);
-                this.string = this.arrayInputs[i].getText();
+                //this.string = this.arrayInputs[i].getText();
             }
         }
     }

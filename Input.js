@@ -20,6 +20,7 @@ class Input {
     displayText() {
         fill(0);
         noStroke();
+        textAlign(LEFT);
         textSize(13);
         text(this.text, this.posX + 7, this.posY + 15);
     }
@@ -27,6 +28,7 @@ class Input {
     displayPassword() {
         fill(0);
         noStroke();
+        textAlign(LEFT);
         textSize(16);
         let incrementarX = 0;
         for (let i = 0; i < this.text.length; i++) {
