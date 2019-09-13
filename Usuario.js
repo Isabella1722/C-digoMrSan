@@ -6,7 +6,7 @@ class Usuario {
     }
 }
 function iniciarsesion() {
-    if(nombre == "Isabella" && clave == "12345") {
+    if(this.nombre == "Isabella" && this.clave == "12345") {
         console.log("Entró");;
     }
 }

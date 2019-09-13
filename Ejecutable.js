@@ -17,7 +17,6 @@ let cantidadA;
 let usuarios = [];
 let precioTAdicionesCompra;
 
-
 let evaluarMarco1;
 let evaluarMarco2;
 function preload() {
@@ -49,7 +48,7 @@ function preload() {
 
 function setup() {
     createCanvas(375, 812);
-    pantalla = 0;
+    pantalla = 17;
     /*userInput = createInput('');
     passwordInput = createInput('', 'password');
     userInput.position(66, 405);
@@ -762,8 +761,9 @@ function mousePressed() {
     switch (pantalla) {
         case 0:
             //BOTÓN ENTRAR
-            if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589) {
+            if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && loginScreen.arrayInputs[0].string=='Esteban') {
                 pantalla = 1;
+                console.log(":v");
             }
             // BOTÓN ENTRAR REGISTRO
             if (mouseX >= 124 && mouseX <= 246 && mouseY >= 623 && mouseY <= 646) {
@@ -800,6 +800,14 @@ function mousePressed() {
             // BOTÓN REGISTRO
             if (mouseX >= 159 && mouseX <= 214 && mouseY >= 551 && mouseY <= 608) {
                 pantalla = 1;
+                let user = new Usuario(registroScreen.arrayInputs[0].string, registroScreen.arrayInputs[1].string, registroScreen.arrayInputs[2].string);
+                usuarios.push(user);
+                localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                registroScreen.arrayInputs[0].string = '';
+                registroScreen.arrayInputs[1].string = '';
+                registroScreen.arrayInputs[2].string = '';
+                localStorage.clear();
+                console.log(usuarios[0]);
             }
             break;
         case 3:
@@ -1101,4 +1109,3 @@ function mousePressed() {
 
 
 // alt shift f  para acomodar las lineas de código
-
