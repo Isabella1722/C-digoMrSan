@@ -13,7 +13,7 @@ let tarjetaScreen;
 let direccionScreen;
 let arrayUsuario;
 let cantidadA;
-//let usuarios =[];
+let usuarios = [];
 
 
 function preload() {
@@ -722,14 +722,19 @@ function mousePressed() {
         /*for(let i = 0; i<registoScreen.length; i++){
 
         }*/
-        let user = new Usuario(registroScreen.string, registroScreen.string, registroScreen.string);
+        let user = new Usuario(registroScreen.arrayInputs[0].string, registroScreen.arrayInputs[1].string, registroScreen.arrayInputs[2].string);
         usuarios.push(user);
-        console.log(user.length);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        registroScreen.arrayInputs[0].string = '';
+        registroScreen.arrayInputs[1].string = '';
+        registroScreen.arrayInputs[2].string = '';
+        //localStorage.clear();
+        console.log(usuarios.length);
         
         //nombreInput = '';
         //createPassword = '';
         //emailInput = '';
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        
     }
 
     //BOTÓN SANDWICH CRIOLLO
