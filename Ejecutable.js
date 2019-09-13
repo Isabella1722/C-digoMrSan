@@ -14,6 +14,7 @@ let direccionScreen;
 let arrayUsuario;
 let cantidadA;
 let usuarios = [];
+let user1;
 
 
 function preload() {
@@ -665,8 +666,10 @@ function mousePressed() {
     }
 
     //BOTÓN ENTRAR
-    if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0) {
+    if (mouseX >= 90 && mouseX <= 282 && mouseY >= 543 && mouseY <= 589 && pantalla == 0
+        && loginScreen.arrayInputs[0].string=="Esteban" && loginScreen.arrayInputs[1].string=="2703") {
         pantalla = 1;
+
         //  userInput.remove();
         //passwordInput.remove();
     }

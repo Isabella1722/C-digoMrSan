@@ -2,6 +2,7 @@ class Login {
     constructor() {
         this.incrementPosY = 0;
         this.arrayInputs = [];
+        this.string;
         for (let i = 0; i < 2; i++) {
             this.arrayInputs[i] = new Input(57, 399 + this.incrementPosY, 260);
             this.incrementPosY += 75;
@@ -34,6 +35,7 @@ class Login {
         for (let i = 0; i < this.arrayInputs.length; i++) {
             if (this.arrayInputs[i].isFocus() && this.arrayInputs[i].getText().length < 25) {
                 this.arrayInputs[i].setText(this.arrayInputs[i].getText() + k);
+                this.string = this.arrayInputs[i].getText();
             }
         }
     }
