@@ -14,7 +14,7 @@ class Tarjeta {
         }
         for (let i = 0; i < 3; i++) {
             this.arrayMini[i] = new Input(136 + this.incrementPosX, 463, 60);
-            this.incrementPosX += 65;
+            this.incrementPosX += 71;
         }
     }
 
